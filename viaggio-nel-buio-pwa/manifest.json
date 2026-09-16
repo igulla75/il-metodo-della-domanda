@@ -1,0 +1,21 @@
+{
+  "name": "Il Metodo della Domanda — Viaggio nel buio",
+  "short_name": "Metodo Domanda",
+  "description": "I 32 Itinerari del libro Viaggio nel buio, attraversati con il Metodo della Domanda: osservare, distinguere, domandare, verificare, accettare il limite, aggiornare, decidere, riprendere il cammino.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "./index.html",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "any",
+  "background_color": "#F7F3E9",
+  "theme_color": "#F7F3E9",
+  "lang": "it",
+  "dir": "ltr",
+  "icons": [
+    { "src": "favicon-48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
