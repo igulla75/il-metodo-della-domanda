@@ -4468,17 +4468,19 @@ root.render(<MetodoDellaDomandaApp />);
   // ---------- 1) Service worker: rende l'app utilizzabile offline dopo la prima visita ----------
   // Funziona solo se il file è ospitato su http/https (anche in locale su localhost).
   // Se aperto come file singolo (file://) questa parte semplicemente non fa nulla: nessun errore per l'utente.
-  // Rimuove qualunque versione precedente del service worker e delle sue cache,
-  // per garantire che si veda sempre la versione più aggiornata del sito, senza pagine vuote residue.
-  if('serviceWorker' in navigator){
-    navigator.serviceWorker.getRegistrations().then(function(regs){
-      regs.forEach(function(reg){ reg.unregister(); });
-    }).catch(function(){});
-  }
-  if(window.caches && caches.keys){
-    caches.keys().then(function(names){
-      names.forEach(function(n){ caches.delete(n); });
-    }).catch(function(){});
+  // Rimuove qualunque service worker di versione diversa da quella attuale
+  // (pulizia automatica di eventuali versioni rotte installate in precedenza),
+  // poi registra la versione attuale, più sicura, che non mette in cache
+  // le librerie esterne (React/Babel) per evitare pagine vuote.
+  if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.getRegistrations().then(function(regs){
+        var hasCurrent = regs.some(function(r){ return r.active && r.active.scriptURL.indexOf('sw.js') !== -1; });
+        return Promise.all(regs.map(function(reg){ return reg.unregister(); }));
+      }).catch(function(){}).then(function(){
+        return navigator.serviceWorker.register('sw.js');
+      }).catch(function(){ /* nessun problema: l'app funziona comunque */ });
+    });
   }
 
   function toast(msg, withInstallHint){
