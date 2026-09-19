@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewp ort-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
 <title>Il Metodo della Domanda</title>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#F7F3E9">
@@ -50,9 +50,9 @@
   }
   @media (display-mode: standalone){ #downloadBtn{ display:none !important; } }
 </style>
-</head>head>
+</head>
 <body>
-
+<div id="root"></div>
 
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -4468,10 +4468,17 @@ root.render(<MetodoDellaDomandaApp />);
   // ---------- 1) Service worker: rende l'app utilizzabile offline dopo la prima visita ----------
   // Funziona solo se il file è ospitato su http/https (anche in locale su localhost).
   // Se aperto come file singolo (file://) questa parte semplicemente non fa nulla: nessun errore per l'utente.
-  if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){
-    window.addEventListener('load', function(){
-      navigator.serviceWorker.register('sw.js').catch(function(){ /* nessun problema: l'app funziona comunque */ });
-    });
+  // Rimuove qualunque versione precedente del service worker e delle sue cache,
+  // per garantire che si veda sempre la versione più aggiornata del sito, senza pagine vuote residue.
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.getRegistrations().then(function(regs){
+      regs.forEach(function(reg){ reg.unregister(); });
+    }).catch(function(){});
+  }
+  if(window.caches && caches.keys){
+    caches.keys().then(function(names){
+      names.forEach(function(n){ caches.delete(n); });
+    }).catch(function(){});
   }
 
   function toast(msg, withInstallHint){
@@ -4544,7 +4551,6 @@ root.render(<MetodoDellaDomandaApp />);
 
 })();
 </script>
-<div id="root"></div>
 
 </body>
 </html>
