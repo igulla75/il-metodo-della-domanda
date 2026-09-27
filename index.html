@@ -192,7 +192,7 @@ const ITINERARI = {
   },
   8: {
     title: 'Pensare con chiarezza dentro una condizione che non dipende da te',
-    family: 'Limite',
+    family: 'Scarsità',
     recognition: 'Vivi una condizione di scarsità economica, di tempo o di risorse, e fatichi a pianificare, decidere con calma, o resistere a scelte che a mente fredda non faresti.',
     keyInsight: 'La scarsità consuma risorse cognitive reali, misurabili: non è una questione di carattere o forza di volontà.',
     caution: null,
@@ -576,9 +576,11 @@ const ATLANTE_DOMANDA = [
   { label: 'Quale metodo devo usare?', itinerari: [6] },
   { label: 'Che cosa posso cambiare?', itinerari: [7] },
   { label: 'Come vivere una condizione che non dipende da me?', itinerari: [8] },
+  { label: 'Come riorganizzo la mia vita attorno a un limite che resta?', itinerari: [17] },
   { label: 'Come ricomincio?', itinerari: [9] },
   { label: 'Come continuo dopo una perdita?', itinerari: [10, 11] },
   { label: 'Come scelgo?', itinerari: [12] },
+  { label: 'Come vivo con il tempo che non basta mai?', itinerari: [18] },
   { label: 'Come affronto un conflitto?', itinerari: [20] },
   { label: 'Come vivere sapendo che morirò?', itinerari: [21] },
   { label: 'Come attraverso la morte di chi amo?', itinerari: [31] },
@@ -591,13 +593,19 @@ const ATLANTE_DOMANDA = [
   { label: 'Come riconosco la violenza o la manipolazione?', itinerari: [32] },
   { label: 'Come porto insieme dolore e amore?', itinerari: [28] },
   { label: 'Cosa credo davvero?', itinerari: [29] },
+  { label: 'Come gestisco la preoccupazione per il futuro del pianeta?', itinerari: [13] },
+  { label: 'Come convivo con una condizione psichiatrica di lungo corso?', itinerari: [14] },
+  { label: 'Sto riparando o sto solo paralizzandomi nel senso di colpa?', itinerari: [15] },
+  { label: 'Come capisco una dipendenza, la mia o quella di chi mi sta accanto?', itinerari: [16] },
+  { label: 'Come gestisco la paura di sbagliare come genitore?', itinerari: [19] },
 ];
 
 const ATLANTE_FAMIGLIA = [
   { label: 'Conoscenza e osservazione', itinerari: [1, 2, 3, 4, 5, 6] },
-  { label: 'Limite', itinerari: [7, 8, 17, 21] },
+  { label: 'Limite', itinerari: [7, 17, 21] },
+  { label: 'Scarsità', itinerari: [8] },
   { label: 'Lavoro', itinerari: [9] },
-  { label: 'Perdita e relazioni', itinerari: [10, 11, 25] },
+  { label: 'Perdita e relazioni', itinerari: [10, 11] },
   { label: 'Decisione', itinerari: [12] },
   { label: 'Futuro del pianeta', itinerari: [13] },
   { label: 'Salute mentale', itinerari: [14] },
@@ -608,7 +616,7 @@ const ATLANTE_FAMIGLIA = [
   { label: 'Conflitto', itinerari: [20] },
   { label: 'Ricerca di senso', itinerari: [22] },
   { label: 'Gratitudine e cambiamenti positivi', itinerari: [30] },
-  { label: 'Perdita ambigua', itinerari: [23, 24] },
+  { label: 'Perdita ambigua', itinerari: [23, 24, 25] },
   { label: 'Fallimento e ricostruzione', itinerari: [26] },
   { label: 'Tradimento e fiducia', itinerari: [27] },
   { label: 'Violenza e manipolazione', itinerari: [32] },
@@ -1191,7 +1199,7 @@ const TOOLS_LIST = [
   { key: 'mindful-eating', title: 'Fame o altro?', subtitle: 'Una pausa guidata sul respiro, poi tre domande prima di decidere', color: '#D35400', icon: '\u{1F37D}\uFE0F' , itinerari: [16] },
   { key: 'mappa-convinzioni', title: 'Mappa delle convinzioni', subtitle: 'Cosa credevo prima, cosa vedo ora', color: '#1F4E8C', icon: '\u{1F5FA}\uFE0F' , itinerari: [3] },
   { key: 'time-mapping', title: 'Dove va davvero il mio tempo', subtitle: 'Una mappa, non solo un\u2019impressione', color: '#3F7FBF', icon: '\u23F1\uFE0F' , itinerari: [18] },
-  { key: 'mappa-perdita', title: 'Mappa della perdita', subtitle: 'Cosa è andato, cosa resta, cosa continua', color: '#8a8a8a', icon: '\u{1F9ED}' , itinerari: [10, 23, 24, 28] },
+  { key: 'mappa-perdita', title: 'Mappa della perdita', subtitle: 'Cosa è andato, cosa resta, cosa continua', color: '#6b6b6b', icon: '\u{1F9ED}' , itinerari: [10, 23, 24, 28] },
   { key: 'safety-plan', title: 'Piano di sicurezza', subtitle: 'Una base per riflettere, non un sostituto del 1522', color: '#8B1E1E', icon: '\u{1F6E1}\uFE0F' , itinerari: [32] },
   { key: 'tempo-preoccuparsi', title: 'Tempo per preoccuparsi', subtitle: 'Rimanda, non sopprimere \u2014 poi affrontale, tutte insieme', color: '#3F7FBF', icon: '\u23F3' , itinerari: [] },
   { key: 'problem-solving', title: 'Risolvere un problema, passo dopo passo', subtitle: 'Definire, generare alternative, decidere, verificare', color: '#2F8F5B', icon: '\u{1F9E9}' , itinerari: [20] },
@@ -1200,7 +1208,7 @@ const TOOLS_LIST = [
   { key: 'sollievo-caregiver', title: 'Sollievo per chi si prende cura', subtitle: 'Le pause programmate possono aiutare, anche quando sembra impossibile fermarsi', color: '#3F7FBF', icon: '\u{1F91D}' , itinerari: [24] },
   { key: 'fare-significato', title: 'Fare significato', subtitle: 'Non scegliere una direzione \u2014 notare dove il senso è già presente', color: '#6B4FA0', icon: '\u{1F31F}' , itinerari: [7, 22] },
   { key: 'momenti-svolta', title: 'Momenti di svolta', subtitle: 'Per due persone insieme \u2014 la fiducia si ricostruisce un gesto alla volta', color: '#C2185B', icon: '\u{1F91D}' , itinerari: [27] },
-  { key: 'accettazione-radicale', title: 'Accettazione radicale', subtitle: 'Il dolore è inevitabile, la sofferenza aggiunta non lo è', color: '#8a8a8a', icon: '\u{1FAB6}' , itinerari: [7] },
+  { key: 'accettazione-radicale', title: 'Accettazione radicale', subtitle: 'Il dolore è inevitabile, la sofferenza aggiunta non lo è', color: '#6b6b6b', icon: '\u{1FAB6}' , itinerari: [7] },
   { key: 'autotest', title: 'Autotest, non rilettura', subtitle: 'Scrivi cosa ricordi prima di controllare', color: '#3F7FBF', icon: '\u{1F9E0}' , itinerari: [] },
   { key: 'piano-studio', title: 'Piano di studio distribuito', subtitle: 'Sessioni brevi, non una maratona', color: '#2F8F5B', icon: '\u{1F4C6}' , itinerari: [] },
   { key: 'respiro', title: 'Respirazione guidata', subtitle: 'Un cerchio da seguire con il respiro', color: '#1F4E8C', icon: '\u{1F30A}' , itinerari: [1] },
@@ -1265,7 +1273,7 @@ function BreathingTool({ baseFont, onExit }) {
         <div style={{ fontSize: baseFont * 1.15, fontWeight: 800, color: '#17203A', marginBottom: 8, minHeight: 30 }}>
           {running ? currentLabel : 'Pronto quando vuoi'}
         </div>
-        {running && <div style={{ fontSize: baseFont * 0.85, color: '#8a8a8a' }}>Cicli completati: {cycles}</div>}
+        {running && <div style={{ fontSize: baseFont * 0.85, color: '#6b6b6b' }}>Cicli completati: {cycles}</div>}
       </div>
       <div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
         {!running
@@ -1273,7 +1281,7 @@ function BreathingTool({ baseFont, onExit }) {
           : <button onClick={stop} style={btnSecondary}>Fermati</button>}
         <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
       </div>
-      <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', textAlign: 'center', marginTop: 20, lineHeight: 1.5 }}>
+      <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', textAlign: 'center', marginTop: 20, lineHeight: 1.5 }}>
         Inspira mentre il cerchio cresce, espira mentre si restringe. Bastano cinque-dieci minuti.
       </p>
     </div>
@@ -1329,7 +1337,7 @@ function JacobsonTool({ baseFont, onExit }) {
 
   return (
     <div>
-      <div style={{ fontSize: 13, color: '#8a8a8a', fontWeight: 700, marginBottom: 8 }}>
+      <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 700, marginBottom: 8 }}>
         GRUPPO {idx + 1} DI {MUSCLE_GROUPS.length}
       </div>
       <div style={{ ...card, textAlign: 'center', paddingTop: 32, paddingBottom: 32 }}>
@@ -1352,7 +1360,7 @@ function JacobsonTool({ baseFont, onExit }) {
           <>
             <div style={{ fontSize: baseFont * 1.6, fontWeight: 800, color: '#2F8F5B', marginBottom: 10 }}>Rilascia</div>
             <div style={{ fontSize: baseFont * 2, fontWeight: 800, color: '#17203A' }}>{secondsLeft}</div>
-            <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', marginTop: 12 }}>Nota il contrasto tra tensione e distensione.</p>
+            <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginTop: 12 }}>Nota il contrasto tra tensione e distensione.</p>
           </>
         )}
       </div>
@@ -1403,7 +1411,7 @@ function GroundingTool({ baseFont, onExit }) {
 
   return (
     <div>
-      <div style={{ fontSize: 13, color: '#8a8a8a', fontWeight: 700, marginBottom: 8 }}>PASSO {idx + 1} DI 5</div>
+      <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 700, marginBottom: 8 }}>PASSO {idx + 1} DI 5</div>
       <div style={card}>
         <div style={{ fontSize: 34, marginBottom: 8 }}>{step.icon}</div>
         <div style={{ fontSize: baseFont * 1.15, fontWeight: 800, color: step.color, marginBottom: 16 }}>
@@ -1493,7 +1501,7 @@ function CBTTool({ baseFont, onExit }) {
       {fields.map((f, i) => (
         <div key={i} style={card}>
           <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: f.color, marginBottom: 6 }}>{i + 1}. {f.label}</div>
-          <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', marginBottom: 10, lineHeight: 1.4 }}>{f.placeholder}</p>
+          <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginBottom: 10, lineHeight: 1.4 }}>{f.placeholder}</p>
           <textarea value={f.value} onChange={(e) => f.set(e.target.value)} rows={3}
             style={{ ...inputStyle, marginBottom: 0, resize: 'vertical' }} />
         </div>
@@ -1517,7 +1525,7 @@ function FivePercheTool({ baseFont, onExit }) {
       <div>
         <div style={card}>
           <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: '#D4A017', marginBottom: 10 }}>Qual è il sintomo o il problema iniziale?</div>
-          <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', marginBottom: 10 }}>Descrivilo come lo racconteresti a qualcuno — il fatto, non ancora la causa.</p>
+          <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginBottom: 10 }}>Descrivilo come lo racconteresti a qualcuno — il fatto, non ancora la causa.</p>
           <input type="text" value={problem} onChange={(e) => setProblem(e.target.value)} placeholder="Es. Un progetto è in ritardo di due settimane" style={inputStyle} />
         </div>
         <button onClick={() => problem.trim() && setStarted(true)} disabled={!problem.trim()} style={{ ...btnPrimary('#D4A017'), opacity: problem.trim() ? 1 : 0.5, width: '100%', marginBottom: 12 }}>
@@ -1534,7 +1542,7 @@ function FivePercheTool({ baseFont, onExit }) {
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a6d00', marginBottom: 4 }}>IL PROBLEMA</div>
         <div style={{ fontSize: baseFont * 0.95, color: '#17203A' }}>{problem}</div>
       </div>
-      <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', marginBottom: 14, lineHeight: 1.4 }}>
+      <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', marginBottom: 14, lineHeight: 1.4 }}>
         Cinque "perché" non garantiscono di arrivare alla causa vera — nei problemi complessi, di solito non esiste una sola causa da scoprire. Questo esercizio aiuta a esplorare possibili cause, non a dimostrarle.
       </p>
       {reasons.map((val, i) => {
@@ -1588,13 +1596,13 @@ function OODATool({ baseFont, onExit }) {
       {history.length > 0 && (
         <div style={{ marginBottom: 16 }}>
           {history.map((h, i) => (
-            <div key={i} style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 4 }}>
+            <div key={i} style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 4 }}>
               Ciclo {h.round} completato — hai agito: "{h.agisci.slice(0, 60)}{h.agisci.length > 60 ? '\u2026' : ''}"
             </div>
           ))}
         </div>
       )}
-      <div style={{ fontSize: 13, color: '#8a8a8a', fontWeight: 700, marginBottom: 8 }}>CICLO {round} — PASSO {idx + 1} DI 4</div>
+      <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 700, marginBottom: 8 }}>CICLO {round} — PASSO {idx + 1} DI 4</div>
       <div style={{ ...card, borderColor: phase.color }}>
         <div style={{ fontSize: baseFont * 1.2, fontWeight: 800, color: phase.color, marginBottom: 10 }}>{phase.label}</div>
         <p style={{ fontSize: baseFont * 0.92, color: '#2b2b2b', marginBottom: 14, lineHeight: 1.5 }}>{phase.prompt}</p>
@@ -1622,7 +1630,7 @@ function SOAPTool({ baseFont, onExit }) {
       {fields.map((f, i) => (
         <div key={i} style={card}>
           <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: f.color, marginBottom: 6 }}>{i + 1}. {f.label}</div>
-          <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', marginBottom: 10 }}>{f.hint}</p>
+          <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginBottom: 10 }}>{f.hint}</p>
           <textarea value={f.value} onChange={(e) => f.set(e.target.value)} rows={3} style={{ ...inputStyle, marginBottom: 0, resize: 'vertical' }} />
         </div>
       ))}
@@ -1650,7 +1658,7 @@ function IshikawaTool({ baseFont, onExit }) {
       {ISHIKAWA_CATEGORIES.map((cat) => (
         <div key={cat.key} style={{ ...card, borderColor: cat.color }}>
           <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: cat.color, marginBottom: 6 }}>{cat.label}</div>
-          <p style={{ fontSize: baseFont * 0.82, color: '#8a8a8a', marginBottom: 10 }}>{cat.hint}</p>
+          <p style={{ fontSize: baseFont * 0.82, color: '#6b6b6b', marginBottom: 10 }}>{cat.hint}</p>
           <textarea value={causes[cat.key]} onChange={(e) => setCauses((prev) => ({ ...prev, [cat.key]: e.target.value }))}
             rows={2} placeholder="Quali cause possibili vedi qui?" style={{ ...inputStyle, marginBottom: 0, resize: 'vertical' }} />
         </div>
@@ -1738,7 +1746,7 @@ function CNVTool({ baseFont, onExit }) {
       {fields.map((f, i) => (
         <div key={i} style={card}>
           <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: f.color, marginBottom: 6 }}>{i + 1}. {f.label}</div>
-          <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', marginBottom: 10 }}>{f.hint}</p>
+          <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginBottom: 10 }}>{f.hint}</p>
           <textarea value={f.value} onChange={(e) => f.set(e.target.value)} rows={2} style={{ ...inputStyle, marginBottom: 0, resize: 'vertical' }} />
         </div>
       ))}
@@ -1827,7 +1835,7 @@ function ColoringTool({ baseFont, onExit }) {
           <button onClick={reset} style={btnSecondary}>Ricomincia</button>
         </div>
       </div>
-      <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', textAlign: 'center', marginBottom: 16, lineHeight: 1.5 }}>
+      <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', textAlign: 'center', marginBottom: 16, lineHeight: 1.5 }}>
         La ricerca associa il colorare uno schema strutturato come questo a una riduzione dell’ansia nel breve termine — non è specifico di una forma in particolare, ma dell’avere contorni già dati, senza dover decidere cosa disegnare.
       </p>
       <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
@@ -1882,7 +1890,7 @@ function ControlCircleTool({ baseFont, onExit }) {
   const zones = [
     { key: 'controllo', label: 'Nel mio controllo', desc: 'Dipende solo da me: le mie azioni, le mie parole, le mie scelte.', color: '#2F8F5B' },
     { key: 'influenza', label: 'Posso influenzare', desc: 'Non dipende solo da me, ma le mie azioni contano: una conversazione, una richiesta, un esempio.', color: '#D4A017' },
-    { key: 'preoccupazione', label: 'Fuori dal mio controllo', desc: 'Non dipende da me in nessun modo — il tempo, le scelte altrui, il passato.', color: '#8a8a8a' },
+    { key: 'preoccupazione', label: 'Fuori dal mio controllo', desc: 'Non dipende da me in nessun modo — il tempo, le scelte altrui, il passato.', color: '#6b6b6b' },
   ];
 
   return (
@@ -1907,7 +1915,7 @@ function ControlCircleTool({ baseFont, onExit }) {
       {zones.map((z) => (
         <div key={z.key} style={{ ...card, borderColor: z.color, borderWidth: 1.5 }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: z.color, marginBottom: 4, letterSpacing: 0.3 }}>{z.label.toUpperCase()}</div>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>{z.desc}</p>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>{z.desc}</p>
           {items[z.key].length === 0
             ? <p style={{ fontSize: baseFont * 0.85, color: '#bbb', fontStyle: 'italic' }}>Ancora vuoto</p>
             : items[z.key].map((it, i) => (
@@ -1971,8 +1979,8 @@ function DecisionTreeTool({ baseFont, onExit }) {
             <div style={{ fontSize: 12.5, fontWeight: 800, color: '#1F4E8C', marginBottom: 10 }}>UNA PRIMA PISTA DA ESPLORARE</div>
             <p style={{ fontSize: baseFont * 1.1, fontWeight: 800, marginBottom: 10 }}>{result.title}</p>
             <p style={{ fontSize: baseFont * 0.9, lineHeight: 1.5, color: '#5b5b5b', marginBottom: 10 }}>{result.nota}</p>
-            <p style={{ fontSize: baseFont * 0.8, lineHeight: 1.5, color: '#8a8a8a', marginBottom: 14, fontStyle: 'italic' }}>Questa è una classificazione orientativa, non diagnostica: un problema reale può appartenere a più categorie insieme, e richiedere più strumenti diversi.</p>
-            <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 8 }}>STRUMENTI SUGGERITI</div>
+            <p style={{ fontSize: baseFont * 0.8, lineHeight: 1.5, color: '#6b6b6b', marginBottom: 14, fontStyle: 'italic' }}>Questa è una classificazione orientativa, non diagnostica: un problema reale può appartenere a più categorie insieme, e richiedere più strumenti diversi.</p>
+            <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 8 }}>STRUMENTI SUGGERITI</div>
             {result.tools.map((t, i) => (
               <div key={i} style={{ padding: '10px 14px', background: '#F5F1E6', borderRadius: 10, marginBottom: 8, fontSize: baseFont * 0.92 }}>{t}</div>
             ))}
@@ -2018,7 +2026,7 @@ function HypothesisLabTool({ baseFont, onExit }) {
 
       <div style={{ ...card, borderColor: '#C0392B' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#C0392B', marginBottom: 10 }}>PROVE CONTRARIE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Il passo più difficile e più importante: cercare cosa smentisce l’ipotesi, non solo cosa la conferma.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Il passo più difficile e più importante: cercare cosa smentisce l’ipotesi, non solo cosa la conferma.</p>
         {againstEv.map((v, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
             <input value={v} onChange={(e) => updateRow(setAgainstEv, againstEv, i, e.target.value)} style={{ ...inputStyle, marginBottom: 0 }} placeholder="Cosa non torna con questa spiegazione?" />
@@ -2081,7 +2089,7 @@ function ACTValuesTool({ baseFont, onExit }) {
 
   return (
     <div>
-      <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 16, lineHeight: 1.45, fontStyle: 'italic' }}>
+      <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 16, lineHeight: 1.45, fontStyle: 'italic' }}>
         Questo è un estratto didattico ispirato all’ACT (Acceptance and Commitment Therapy) — non il protocollo terapeutico completo, e non sostituisce un percorso con un professionista.
       </p>
       <div style={card}>
@@ -2092,14 +2100,14 @@ function ACTValuesTool({ baseFont, onExit }) {
         <input value={domain} onChange={(e) => setDomain(e.target.value)} placeholder="Es. le relazioni familiari, il lavoro, la salute..." style={inputStyle} />
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#2F8F5B', marginBottom: 8, marginTop: 8 }}>2. COSA VUOI DAVVERO RAPPRESENTARE IN QUESTO AMBITO?</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Non un risultato da ottenere, ma una qualità che vuoi portare — essere presente, essere onesto, essere coraggioso.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Non un risultato da ottenere, ma una qualità che vuoi portare — essere presente, essere onesto, essere coraggioso.</p>
         <input value={value} onChange={(e) => setValue(e.target.value)} placeholder="Il valore che voglio portare qui è..." style={inputStyle} />
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#C0392B', marginBottom: 8, marginTop: 8 }}>3. COSA STAI EVITANDO A CAUSA DEL DISAGIO?</div>
         <input value={avoid} onChange={(e) => setAvoid(e.target.value)} placeholder="Cosa non fai, o rimandi, per paura o disagio?" style={inputStyle} />
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#2F8F5B', marginBottom: 8, marginTop: 8 }}>4. UN PASSO PICCOLO, POSSIBILE ANCHE OGGI</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Non deve risolvere tutto — deve solo essere nella direzione del valore.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Non deve risolvere tutto — deve solo essere nella direzione del valore.</p>
         <textarea value={action} onChange={(e) => setAction(e.target.value)} placeholder="Il piccolo passo che posso fare è..."
           style={{ ...inputStyle, minHeight: 60, resize: 'vertical', marginBottom: 0 }} />
       </div>
@@ -2127,7 +2135,7 @@ function WOOPTool({ baseFont, onExit }) {
       {steps.map((s, i) => (
         <div key={i} style={{ ...card, borderColor: s.color, borderWidth: 1.5 }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: s.color, marginBottom: 6 }}>{i + 1}. {s.label}</div>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>{s.help}</p>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>{s.help}</p>
           <textarea value={s.val} onChange={(e) => s.set(e.target.value)} placeholder={s.placeholder}
             style={{ ...inputStyle, minHeight: 55, resize: 'vertical', marginBottom: 0 }} />
         </div>
@@ -2153,7 +2161,7 @@ function BehavioralActivationTool({ baseFont, onExit }) {
 
   const RatingRow = ({ label, value, onChange }) => (
     <div style={{ marginBottom: 10 }}>
-      <div style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 4 }}>{label}</div>
+      <div style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 4 }}>{label}</div>
       <div style={{ display: 'flex', gap: 6 }}>
         {[1, 2, 3, 4, 5].map((n) => (
           <button key={n} onClick={() => onChange(n)}
@@ -2205,19 +2213,19 @@ function ABCTool({ baseFont, onExit }) {
           Molti comportamenti che vorremmo cambiare hanno una logica: portano un sollievo immediato, anche quando il costo a lungo termine è alto. Mappare questo schema è il primo passo per intervenire su di esso.
         </p>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#1F4E8C', marginBottom: 8 }}>A — ANTECEDENTE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Cosa succede subito prima? Un luogo, un’ora, un’emozione, una persona.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Cosa succede subito prima? Un luogo, un’ora, un’emozione, una persona.</p>
         <textarea value={antecedente} onChange={(e) => setAntecedente(e.target.value)} placeholder="Prima, di solito..." style={{ ...inputStyle, minHeight: 55, resize: 'vertical' }} />
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#C0392B', marginBottom: 8, marginTop: 4 }}>B — COMPORTAMENTO</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Cosa fai esattamente, descritto senza giudicarlo.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Cosa fai esattamente, descritto senza giudicarlo.</p>
         <textarea value={comportamento} onChange={(e) => setComportamento(e.target.value)} placeholder="Il comportamento è..." style={{ ...inputStyle, minHeight: 55, resize: 'vertical' }} />
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#2F8F5B', marginBottom: 8, marginTop: 4 }}>C — CONSEGUENZA IMMEDIATA</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Cosa ottieni subito dopo? Spesso è un sollievo, non un vero beneficio.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Cosa ottieni subito dopo? Spesso è un sollievo, non un vero beneficio.</p>
         <textarea value={conseguenzaImm} onChange={(e) => setConseguenzaImm(e.target.value)} placeholder="Subito dopo, mi sento..." style={{ ...inputStyle, minHeight: 55, resize: 'vertical' }} />
 
-        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 8, marginTop: 4 }}>CONSEGUENZA A DISTANZA</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 8 }}>Cosa succede più avanti, ore o giorni dopo?</p>
+        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 8, marginTop: 4 }}>CONSEGUENZA A DISTANZA</div>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 8 }}>Cosa succede più avanti, ore o giorni dopo?</p>
         <textarea value={conseguenzaLungo} onChange={(e) => setConseguenzaLungo(e.target.value)} placeholder="Più avanti, il costo è..." style={{ ...inputStyle, minHeight: 55, resize: 'vertical', marginBottom: 0 }} />
       </div>
       <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
@@ -2260,7 +2268,7 @@ function ExpressiveWritingTool({ baseFont, onExit }) {
         <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Comincia a scrivere..."
           style={{ ...inputStyle, minHeight: 220, resize: 'vertical', marginBottom: 0, fontFamily: 'inherit' }} />
       </div>
-      <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', textAlign: 'center', marginBottom: 16 }}>
+      <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', textAlign: 'center', marginBottom: 16 }}>
         Questo strumento non salva né invia quello che scrivi: il testo esiste solo mentre questa pagina resta aperta e sparisce quando la chiudi. Se usi un dispositivo condiviso, considera che il browser potrebbe comunque conservare tracce nella cronologia o nella cache.
       </p>
       <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
@@ -2285,7 +2293,7 @@ function SelfCompassionTool({ baseFont, onExit }) {
       {steps.map((s, i) => (
         <div key={i} style={{ ...card, borderColor: s.color, borderWidth: 1.5 }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: s.color, marginBottom: 6 }}>{s.label}</div>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>{s.help}</p>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>{s.help}</p>
           <textarea value={s.val} onChange={(e) => s.set(e.target.value)} placeholder={s.placeholder}
             style={{ ...inputStyle, minHeight: 55, resize: 'vertical', marginBottom: 0 }} />
         </div>
@@ -2354,7 +2362,7 @@ function MindfulEatingTool({ baseFont, onExit }) {
       {steps.map((s, i) => (
         <div key={i} style={{ ...card, borderColor: s.color, borderWidth: 1.5 }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: s.color, marginBottom: 6 }}>{s.label}</div>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>{s.help}</p>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>{s.help}</p>
           <textarea value={s.val} onChange={(e) => s.set(e.target.value)} placeholder={s.placeholder}
             style={{ ...inputStyle, minHeight: 55, resize: 'vertical', marginBottom: 0 }} />
         </div>
@@ -2373,7 +2381,7 @@ function BeliefMapTool({ baseFont, onExit }) {
 
   const steps = [
     { label: 'LA CONVINZIONE CHE AVEVO', color: '#1F4E8C', val: old, set: setOld, placeholder: 'Cosa credevo, con sicurezza, prima?' },
-    { label: 'COSA HO VISSUTO O OSSERVATO', color: '#8a8a8a', val: experience, set: setExperience, placeholder: 'Un fatto, un\u2019esperienza, una lettura che non tornava con quella convinzione...' },
+    { label: 'COSA HO VISSUTO O OSSERVATO', color: '#6b6b6b', val: experience, set: setExperience, placeholder: 'Un fatto, un\u2019esperienza, una lettura che non tornava con quella convinzione...' },
     { label: 'LA TENSIONE TRA LE DUE COSE', color: '#C0392B', val: tension, set: setTension, placeholder: 'Cosa esattamente non riesce più a stare insieme?' },
     { label: 'UNA CONVINZIONE PIÙ MATURA CHE STA EMERGENDO', color: '#2F8F5B', val: emerging, set: setEmerging, placeholder: 'Non deve essere definitiva — solo un passo più onesto di prima.' },
   ];
@@ -2455,8 +2463,8 @@ function LossMapTool({ baseFont, onExit }) {
           Una perdita raramente è tutto o niente. Mappare cosa è andato e cosa resta aiuta a vederla con più chiarezza.
         </p>
       </div>
-      <div style={{ ...card, borderColor: '#8a8a8a' }}>
-        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 10 }}>COSA È ANDATO</div>
+      <div style={{ ...card, borderColor: '#6b6b6b' }}>
+        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 10 }}>COSA È ANDATO</div>
         {lost.map((v, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
             <input value={v} onChange={(e) => updateRow(setLost, lost, i, e.target.value)} style={{ ...inputStyle, marginBottom: 0 }} placeholder="Un luogo, un\u2019abitudine, una relazione, un ruolo..." />
@@ -2477,7 +2485,7 @@ function LossMapTool({ baseFont, onExit }) {
       </div>
       <div style={{ ...card, borderColor: '#6B4FA0' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6B4FA0', marginBottom: 8 }}>COSA CONTINUA, IN UNA FORMA NUOVA</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Un legame, una lingua, un’identità — a volte ciò che sembrava perso trova un modo diverso di restare presente.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Un legame, una lingua, un’identità — a volte ciò che sembrava perso trova un modo diverso di restare presente.</p>
         <textarea value={continues} onChange={(e) => setContinues(e.target.value)} style={{ ...inputStyle, minHeight: 60, resize: 'vertical', marginBottom: 0 }} />
       </div>
       <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
@@ -2523,13 +2531,13 @@ function SafetyPlanTool({ baseFont, onExit }) {
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8B1E1E', marginBottom: 8 }}>UNA PAROLA O UN SEGNALE IN CODICE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Una parola innocua, concordata con qualcuno di fiducia, che possa significare "ho bisogno di aiuto" senza dirlo apertamente.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Una parola innocua, concordata con qualcuno di fiducia, che possa significare "ho bisogno di aiuto" senza dirlo apertamente.</p>
         <input value={codeWord} onChange={(e) => setCodeWord(e.target.value)} placeholder="La parola o il segnale che potrei usare..." style={inputStyle} />
       </div>
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8B1E1E', marginBottom: 10 }}>PERSONE DI CUI MI FIDO</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Chi potrebbe aiutarti in un momento difficile — non serve scrivere numeri o indirizzi, solo un nome per ricordarti chi c’è.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Chi potrebbe aiutarti in un momento difficile — non serve scrivere numeri o indirizzi, solo un nome per ricordarti chi c’è.</p>
         {trustedPeople.map((v, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
             <input value={v} onChange={(e) => updateTrusted(i, e.target.value)} style={{ ...inputStyle, marginBottom: 0 }} placeholder="Un nome, o anche solo un ruolo (es. \u2018la mia vicina\u2019)" />
@@ -2541,7 +2549,7 @@ function SafetyPlanTool({ baseFont, onExit }) {
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8B1E1E', marginBottom: 8 }}>UN LUOGO SICURO DOVE ANDARE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Un posto dove potresti andare rapidamente, se ne avessi bisogno.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Un posto dove potresti andare rapidamente, se ne avessi bisogno.</p>
         <input value={safePlace} onChange={(e) => setSafePlace(e.target.value)} style={inputStyle} />
       </div>
 
@@ -2614,7 +2622,7 @@ function WorryTimeTool({ baseFont, onExit }) {
 
           {worries.length > 0 && (
             <div style={card}>
-              <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 10 }}>IN ATTESA ({worries.length})</div>
+              <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 10 }}>IN ATTESA ({worries.length})</div>
               {worries.map((w) => (
                 <div key={w.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: '1px solid #f0ece0' }}>
                   <span style={{ fontSize: baseFont * 0.9 }}>{w.text}</span>
@@ -2644,7 +2652,7 @@ function WorryTimeTool({ baseFont, onExit }) {
             </div>
           </div>
 
-          <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', margin: '20px 0 10px 0' }}>ORA, UNA ALLA VOLTA</div>
+          <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', margin: '20px 0 10px 0' }}>ORA, UNA ALLA VOLTA</div>
           {worries.map((w) => (
             <div key={w.id} style={{ ...card, opacity: w.done ? 0.55 : 1 }}>
               <label style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10, cursor: 'pointer' }}>
@@ -2695,17 +2703,17 @@ function ProblemSolvingTool({ baseFont, onExit }) {
 
       <div style={{ ...card, borderColor: '#2F8F5B' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#2F8F5B', marginBottom: 8 }}>1. DEFINISCI IL PROBLEMA</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Con precisione: cosa, esattamente — chi è coinvolto, quando succede. Non "va tutto male", ma il fatto specifico.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Con precisione: cosa, esattamente — chi è coinvolto, quando succede. Non "va tutto male", ma il fatto specifico.</p>
         <textarea value={problem} onChange={(e) => setProblem(e.target.value)} placeholder="Il problema, con precisione, è..."
           style={{ ...inputStyle, minHeight: 55, resize: 'vertical' }} />
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10, marginTop: 4 }}>Se questo problema fosse risolto, cosa sarebbe diverso? Cosa vuoi ottenere, in concreto?</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10, marginTop: 4 }}>Se questo problema fosse risolto, cosa sarebbe diverso? Cosa vuoi ottenere, in concreto?</p>
         <textarea value={goal} onChange={(e) => setGoal(e.target.value)} placeholder="Voglio arrivare a..."
           style={{ ...inputStyle, minHeight: 45, resize: 'vertical', marginBottom: 0 }} />
       </div>
 
       <div style={{ ...card, borderColor: '#D4A017' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#D4A017', marginBottom: 8 }}>2. GENERA ALTERNATIVE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Quante più possibili, anche quelle che sembrano poco realistiche — non scartare nulla ora, solo elenca.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Quante più possibili, anche quelle che sembrano poco realistiche — non scartare nulla ora, solo elenca.</p>
         {alternatives.map((a, i) => (
           <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 8 }}>
             <input value={a} onChange={(e) => updateAlt(i, e.target.value)} style={{ ...inputStyle, marginBottom: 0 }} placeholder={`Alternativa ${i + 1}`} />
@@ -2717,7 +2725,7 @@ function ProblemSolvingTool({ baseFont, onExit }) {
 
       <div style={{ ...card, borderColor: '#1F4E8C' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#1F4E8C', marginBottom: 8 }}>3. VALUTA E SCEGLI</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Per ciascuna, un pro e un contro. Poi scegli quella che ti sembra più praticabile — non deve essere perfetta.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Per ciascuna, un pro e un contro. Poi scegli quella che ti sembra più praticabile — non deve essere perfetta.</p>
         {alternatives.filter((a) => a.trim()).map((a, i) => (
           <div key={i} style={{ marginBottom: 12, padding: 12, background: chosen === i ? '#EAF1FC' : '#F5F1E6', borderRadius: 10, border: chosen === i ? '2px solid #1F4E8C' : '1px solid #e5dfc9' }}>
             <p style={{ fontSize: baseFont * 0.88, fontWeight: 700, margin: '0 0 8px 0' }}>{a}</p>
@@ -2775,7 +2783,7 @@ function StimulusControlTool({ baseFont, onExit }) {
             <input type="checkbox" checked={!!checks[r.id]} onChange={() => toggle(r.id)} style={{ width: 18, height: 18, marginTop: 2, flexShrink: 0 }} />
             <span>
               <div style={{ fontSize: baseFont * 0.9 }}>{r.text}</div>
-              <div style={{ fontSize: baseFont * 0.76, color: '#8a8a8a' }}>{r.help}</div>
+              <div style={{ fontSize: baseFont * 0.76, color: '#6b6b6b' }}>{r.help}</div>
             </span>
           </label>
         ))}
@@ -2785,7 +2793,7 @@ function StimulusControlTool({ baseFont, onExit }) {
 
       <div style={{ ...card, textAlign: 'center' }}>
         <div style={{ fontSize: baseFont * 1.3, fontWeight: 800, color: '#17203A' }}>{nights}</div>
-        <p style={{ fontSize: baseFont * 0.85, color: '#8a8a8a', margin: 0 }}>notti registrate finora</p>
+        <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', margin: 0 }}>notti registrate finora</p>
       </div>
 
       <button onClick={reset} style={{ ...btnSecondary, width: '100%', marginBottom: 16 }}>Ricomincia il conteggio</button>
@@ -2821,12 +2829,12 @@ function GratitudeLetterTool({ baseFont, onExit }) {
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#D4A017', marginBottom: 10 }}>LA LETTERA</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Sii specifico, non generico. “Grazie per esserci sempre stato” conta meno di un episodio preciso, raccontato con i suoi dettagli.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Sii specifico, non generico. “Grazie per esserci sempre stato” conta meno di un episodio preciso, raccontato con i suoi dettagli.</p>
         <textarea value={letter} onChange={(e) => setLetter(e.target.value)} placeholder={`Caro/a ${name || '...'},\n\nVoglio dirti qualcosa che non ti ho mai detto abbastanza chiaramente...`}
           style={{ ...inputStyle, minHeight: 180, resize: 'vertical', marginBottom: 0, fontFamily: 'inherit' }} />
       </div>
 
-      <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', textAlign: 'center', marginBottom: 16 }}>
+      <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', textAlign: 'center', marginBottom: 16 }}>
         Se vuoi, consegnala o leggigliela di persona — la ricerca mostra un beneficio ancora maggiore. Ma anche solo scriverla, qui, ha valore.
       </p>
 
@@ -2877,7 +2885,7 @@ function CaregiverReliefTool({ baseFont, onExit }) {
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#C0392B', marginBottom: 8 }}>COSA TI TRATTIENE DAL CHIEDERE UNA PAUSA?</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Il senso di colpa è la barriera più comune, non un tuo limite personale.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Il senso di colpa è la barriera più comune, non un tuo limite personale.</p>
         <textarea value={barrier} onChange={(e) => setBarrier(e.target.value)} placeholder="Per esempio: mi sento in colpa a lasciarlo/a con qualcun altro..."
           style={{ ...inputStyle, minHeight: 50, resize: 'vertical', marginBottom: 0 }} />
       </div>
@@ -2914,7 +2922,7 @@ function MeaningMakingTool({ baseFont, onExit }) {
 
       <div style={card}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6B4FA0', marginBottom: 10 }}>DOVE SEI, IN QUESTO MOMENTO?</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 12 }}>La ricerca distingue due stati diversi, non uno migliore dell’altro: sentire che la propria vita ha già un senso, o essere attivamente alla ricerca di uno. Trovarsi nella ricerca non è un segnale di smarrimento.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 12 }}>La ricerca distingue due stati diversi, non uno migliore dell’altro: sentire che la propria vita ha già un senso, o essere attivamente alla ricerca di uno. Trovarsi nella ricerca non è un segnale di smarrimento.</p>
         <div style={{ display: 'flex', gap: 10 }}>
           <button onClick={() => setPhase('presenza')} style={phase === 'presenza' ? btnPrimary('#6B4FA0') : btnSecondary}>Sento che c’è già</button>
           <button onClick={() => setPhase('ricerca')} style={phase === 'ricerca' ? btnPrimary('#6B4FA0') : btnSecondary}>Sono nella ricerca</button>
@@ -2923,28 +2931,28 @@ function MeaningMakingTool({ baseFont, onExit }) {
 
       <div style={{ ...card, borderColor: '#2F8F5B' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#2F8F5B', marginBottom: 8 }}>OPERA O CREAZIONE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Qualcosa che stai facendo, costruendo, portando a termine — anche piccolo.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Qualcosa che stai facendo, costruendo, portando a termine — anche piccolo.</p>
         <textarea value={work} onChange={(e) => setWork(e.target.value)} placeholder="In questo periodo, sto costruendo o portando a termine..."
           style={{ ...inputStyle, minHeight: 50, resize: 'vertical', marginBottom: 0 }} />
       </div>
 
       <div style={{ ...card, borderColor: '#C2185B' }}>
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#C2185B', marginBottom: 8 }}>AMORE O RELAZIONE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Una persona, un legame, un’esperienza vissuta pienamente con qualcuno.</p>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Una persona, un legame, un’esperienza vissuta pienamente con qualcuno.</p>
         <textarea value={love} onChange={(e) => setLove(e.target.value)} placeholder="C'è qualcuno per cui, o con cui..."
           style={{ ...inputStyle, minHeight: 50, resize: 'vertical', marginBottom: 0 }} />
       </div>
 
-      <div style={{ ...card, borderColor: '#8a8a8a' }}>
-        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 8 }}>L’ATTEGGIAMENTO VERSO CIÒ CHE NON PUOI CAMBIARE</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Quando le prime due vie non sono percorribili, resta come scegli di stare di fronte a ciò che non puoi cambiare. Non è la via più facile — spesso è l’unica rimasta.</p>
+      <div style={{ ...card, borderColor: '#6b6b6b' }}>
+        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 8 }}>L’ATTEGGIAMENTO VERSO CIÒ CHE NON PUOI CAMBIARE</div>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Quando le prime due vie non sono percorribili, resta come scegli di stare di fronte a ciò che non puoi cambiare. Non è la via più facile — spesso è l’unica rimasta.</p>
         <textarea value={attitude} onChange={(e) => setAttitude(e.target.value)} placeholder="Di fronte a ciò che non posso cambiare, scelgo di..."
           style={{ ...inputStyle, minHeight: 50, resize: 'vertical', marginBottom: 0 }} />
       </div>
 
       <div style={{ ...card, background: '#F5F1E6' }}>
-        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 10 }}>UN SIGNIFICATO PICCOLO, NOTATO OGGI</div>
-        <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>Non deve essere grande. A volte il senso è già lì, solo non ancora notato.</p>
+        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 10 }}>UN SIGNIFICATO PICCOLO, NOTATO OGGI</div>
+        <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>Non deve essere grande. A volte il senso è già lì, solo non ancora notato.</p>
         <textarea value={noticed} onChange={(e) => setNoticed(e.target.value)} placeholder="Oggi ho notato che..."
           style={{ ...inputStyle, minHeight: 50, resize: 'vertical', marginBottom: 0 }} />
       </div>
@@ -3058,7 +3066,7 @@ function RadicalAcceptanceTool({ baseFont, onExit }) {
   const [nextStep, setNextStep] = useState('');
 
   const steps = [
-    { label: '1. LA REALTÀ, NEI FATTI', color: '#8a8a8a', val: fact, set: setFact, placeholder: 'Cosa è vero, in questo momento, indipendentemente da come vorresti che fosse?', help: 'Non un giudizio, non una previsione — solo il fatto, per come è.' },
+    { label: '1. LA REALTÀ, NEI FATTI', color: '#6b6b6b', val: fact, set: setFact, placeholder: 'Cosa è vero, in questo momento, indipendentemente da come vorresti che fosse?', help: 'Non un giudizio, non una previsione — solo il fatto, per come è.' },
     { label: '2. LA RESISTENZA CHE NOTI', color: '#C0392B', val: resistance, set: setResistance, placeholder: 'Che pensieri tornano? "Non dovrebbe essere così", "non è giusto", "perché a me"...', help: 'Riconoscerla non la rende più forte — è il primo passo per smettere di combatterla.' },
     { label: '3. LA CATENA DI CAUSE', color: '#D4A017', val: chain, set: setChain, placeholder: 'Cosa ha portato a questa realtà? Anche cause fuori dal tuo controllo.', help: 'Non per giustificarla — per vederla come il risultato di una catena, non un\u2019ingiustizia diretta a te.' },
     { label: '4. ACCETTARE CON TUTTA TE STESSA', color: '#2F8F5B', val: wholeself, set: setWholeself, placeholder: 'Non solo con la mente — cosa senti nel corpo quando smetti, anche solo per un momento, di combattere questo fatto?', help: 'Il dolore resta. È la sofferenza aggiunta dalla resistenza che si allenta.' },
@@ -3075,7 +3083,7 @@ function RadicalAcceptanceTool({ baseFont, onExit }) {
       {steps.map((s, i) => (
         <div key={i} style={{ ...card, borderColor: s.color, borderWidth: 1.5 }}>
           <div style={{ fontSize: 12.5, fontWeight: 800, color: s.color, marginBottom: 6 }}>{s.label}</div>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 10 }}>{s.help}</p>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 10 }}>{s.help}</p>
           <textarea value={s.val} onChange={(e) => s.set(e.target.value)} placeholder={s.placeholder}
             style={{ ...inputStyle, minHeight: 55, resize: 'vertical', marginBottom: 0 }} />
         </div>
@@ -3218,7 +3226,7 @@ function StudyPlanTool({ baseFont, onExit }) {
         </div>
       ) : (
         <>
-          <p style={{ fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 14 }}>
+          <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 14 }}>
             {piano.giorniTotali} giorni disponibili, distribuiti tra una prima passata e un ripasso.
           </p>
           {piano.sessioni.map((s, i) => (
@@ -3605,7 +3613,7 @@ function MetodoDellaDomandaApp() {
               <span>
                 <div style={{ fontWeight: 800, fontSize: baseFont * 0.95, color: t.color }}>{t.title}</div>
                 <div style={{ fontSize: baseFont * 0.82, color: '#5b5b5b' }}>{t.subtitle}</div>
-                <div style={{ fontSize: baseFont * 0.72, color: '#8a8a8a', marginTop: 3, fontStyle: t.itinerari.length ? 'normal' : 'italic' }}>
+                <div style={{ fontSize: baseFont * 0.72, color: '#6b6b6b', marginTop: 3, fontStyle: t.itinerari.length ? 'normal' : 'italic' }}>
                   {t.itinerari.length
                     ? 'Itinerario ' + t.itinerari.join(', ')
                     : 'Estensione del metodo, non da un Itinerario specifico'}
@@ -3835,8 +3843,8 @@ function MetodoDellaDomandaApp() {
           </p>
         </div>
 
-        <button onClick={() => setScreen('bibliografia')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginBottom: 12, borderColor: '#8a8a8a', color: '#5b5b5b' }}>&#128218; Bibliografia completa</button>
-        <button onClick={() => setScreen('privacy')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginBottom: 12, borderColor: '#8a8a8a', color: '#5b5b5b' }}>&#128274; Privacy e dati: dove finiscono le tue risposte</button>
+        <button onClick={() => setScreen('bibliografia')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginBottom: 12, borderColor: '#6b6b6b', color: '#5b5b5b' }}>&#128218; Bibliografia completa</button>
+        <button onClick={() => setScreen('privacy')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginBottom: 12, borderColor: '#6b6b6b', color: '#5b5b5b' }}>&#128274; Privacy e dati: dove finiscono le tue risposte</button>
         <button onClick={() => setScreen('welcome')} style={{ ...secondaryBtnStyle(baseFont), width: '100%' }}>&#8592; Torna all’inizio</button>
       </div></div>
     );
@@ -3853,7 +3861,7 @@ function MetodoDellaDomandaApp() {
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#3F7FBF', marginBottom: 8, letterSpacing: 0.3 }}>LE RISPOSTE AI 32 ITINERARI</div>
         <p style={{ fontSize: baseFont * 0.88, color: '#3a3a3a', marginBottom: 18, lineHeight: 1.55 }}>
-          Quello che scrivi rispondendo alle domande di un Itinerario viene salvato con <strong>localStorage</strong>, una funzione integrata in ogni browser. In pratica: il testo resta scritto sul disco di questo dispositivo, dentro lo spazio che il browser riserva a questo sito (viaggionelbuio.netlify.app), e in nessun altro posto. Non transita in rete, non arriva a un server, non è visibile a chi gestisce questo sito né a chi ha scritto l’app. Resta lì finché non lo cancelli tu, o finché non cancelli i dati di navigazione del browser, e non passa automaticamente ad altri tuoi dispositivi (le funzioni di sincronizzazione dei browser, come quella di Chrome, non includono questo tipo di dato). In una finestra di navigazione anonima/privata, viene cancellato non appena la chiudi.
+          Quello che scrivi rispondendo alle domande di un Itinerario viene salvato con <strong>localStorage</strong>, una funzione integrata in ogni browser. In pratica: il testo resta scritto sul disco di questo dispositivo, dentro lo spazio che il browser riserva a questo sito (igulla75.github.io/il-metodo-della-domanda), e in nessun altro posto. Non transita in rete, non arriva a un server, non è visibile a chi gestisce questo sito né a chi ha scritto l’app. Resta lì finché non lo cancelli tu, o finché non cancelli i dati di navigazione del browser, e non passa automaticamente ad altri tuoi dispositivi (le funzioni di sincronizzazione dei browser, come quella di Chrome, non includono questo tipo di dato). In una finestra di navigazione anonima/privata, viene cancellato non appena la chiudi.
         </p>
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8B1E1E', marginBottom: 8, letterSpacing: 0.3 }}>SCRITTURA ESPRESSIVA E PIANO DI SICUREZZA</div>
@@ -3873,7 +3881,7 @@ function MetodoDellaDomandaApp() {
 
         <div style={{ fontSize: 12.5, fontWeight: 800, color: '#5b5b5b', marginBottom: 8, letterSpacing: 0.3 }}>COME CANCELLARE TUTTO</div>
         <p style={{ fontSize: baseFont * 0.88, color: '#3a3a3a', marginBottom: 4, lineHeight: 1.55 }}>
-          Dalle impostazioni del browser, cancellando i "dati di navigazione" o i "dati del sito" per viaggionelbuio.netlify.app, elimini ogni risposta salvata di ogni Itinerario. Puoi anche cancellare i progressi di un singolo Itinerario dalla sua schermata iniziale, quando l’app ti chiede se vuoi riprendere una bozza.
+          Dalle impostazioni del browser, cancellando i "dati di navigazione" o i "dati del sito" per igulla75.github.io/il-metodo-della-domanda, elimini ogni risposta salvata di ogni Itinerario. Puoi anche cancellare i progressi di un singolo Itinerario dalla sua schermata iniziale, quando l’app ti chiede se vuoi riprendere una bozza.
         </p>
 
         <button onClick={() => setScreen('filosofia')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginTop: 20 }}>&#8592; Torna indietro</button>
@@ -3901,9 +3909,9 @@ function MetodoDellaDomandaApp() {
         {BIBLIOGRAFIA_STRUMENTI.map((b, i) => (
           <div key={i} style={{ marginBottom: 16 }}>
             <div style={{ fontSize: baseFont * 0.88, fontWeight: 700, color: '#17203A', marginBottom: 4 }}>{b.strumento}</div>
-            <div style={{ fontSize: baseFont * 0.78, fontWeight: 700, color: '#8a8a8a', marginBottom: 1 }}>Origine</div>
+            <div style={{ fontSize: baseFont * 0.78, fontWeight: 700, color: '#6b6b6b', marginBottom: 1 }}>Origine</div>
             <div style={{ fontSize: baseFont * 0.8, color: '#5b5b5b', lineHeight: 1.4, marginBottom: 4 }}>{b.origine}</div>
-            <div style={{ fontSize: baseFont * 0.78, fontWeight: 700, color: '#8a8a8a', marginBottom: 1 }}>Evidenza empirica</div>
+            <div style={{ fontSize: baseFont * 0.78, fontWeight: 700, color: '#6b6b6b', marginBottom: 1 }}>Evidenza empirica</div>
             <div style={{ fontSize: baseFont * 0.8, color: '#5b5b5b', lineHeight: 1.4 }}>{b.evidenza}</div>
           </div>
         ))}
@@ -3931,7 +3939,7 @@ function MetodoDellaDomandaApp() {
         </p>
 
         {journeyLoading && (
-          <p style={{ textAlign: 'center', color: '#8a8a8a', fontSize: baseFont * 0.9 }}>Sto raccogliendo il tuo cammino...</p>
+          <p style={{ textAlign: 'center', color: '#6b6b6b', fontSize: baseFont * 0.9 }}>Sto raccogliendo il tuo cammino...</p>
         )}
 
         {!journeyLoading && journeyData && journeyData.itinerariList.length === 0 && (
@@ -3947,7 +3955,7 @@ function MetodoDellaDomandaApp() {
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 10 }}>
               <PersonalCompass counts={journeyData.counts} maxCount={journeyData.itinerariList.length} size={260} />
             </div>
-            <p style={{ textAlign: 'center', fontSize: baseFont * 0.8, color: '#8a8a8a', marginBottom: 26 }}>
+            <p style={{ textAlign: 'center', fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 26 }}>
               Ogni numero indica quanti Itinerari, tra quelli che hai affrontato, includono una risposta scritta per quella direzione.
             </p>
 
@@ -3960,7 +3968,7 @@ function MetodoDellaDomandaApp() {
               ))}
             </div>
 
-            <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 10, letterSpacing: 0.3 }}>ITINERARI CHE HAI AFFRONTATO</div>
+            <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 10, letterSpacing: 0.3 }}>ITINERARI CHE HAI AFFRONTATO</div>
             {journeyData.itinerariList.map((it) => {
               const itinData = ITINERARI[it.id];
               if (!itinData) return null;
@@ -3968,7 +3976,7 @@ function MetodoDellaDomandaApp() {
                 <button key={it.id} onClick={() => goToLanding(it.id)}
                   style={{ display: 'block', width: '100%', textAlign: 'left', background: '#fff', border: '1.5px solid #d8d2bf', borderRadius: 12, padding: '12px 16px', marginBottom: 8, cursor: 'pointer' }}>
                   <div style={{ fontSize: baseFont * 0.9, fontWeight: 700, color: '#17203A', marginBottom: 2 }}>{itinData.title}</div>
-                  <div style={{ fontSize: baseFont * 0.78, color: '#8a8a8a' }}>{it.done} di {it.total} passi con una risposta</div>
+                  <div style={{ fontSize: baseFont * 0.78, color: '#6b6b6b' }}>{it.done} di {it.total} passi con una risposta</div>
                 </button>
               );
             })}
@@ -4012,7 +4020,7 @@ function MetodoDellaDomandaApp() {
         </label>
         <input id="sugg-contatto" type="email" value={suggerimentoContatto} onChange={(e) => setSuggerimentoContatto(e.target.value)}
           placeholder="nome@esempio.it" style={{ ...inputStyle, marginBottom: 8 }} />
-        <p style={{ fontSize: baseFont * 0.76, color: '#8a8a8a', marginBottom: 20, lineHeight: 1.4 }}>
+        <p style={{ fontSize: baseFont * 0.76, color: '#6b6b6b', marginBottom: 20, lineHeight: 1.4 }}>
           Il pulsante qui sotto apre la tua app di posta, già scritta e indirizzata: dovrai solo premere "Invia". Se non hai un'app di posta configurata su questo dispositivo, non si aprirà nulla — in quel caso puoi scrivere direttamente a igulla@libero.it.
         </p>
 
@@ -4091,7 +4099,7 @@ function MetodoDellaDomandaApp() {
     return (
       <div style={shell}><div style={inner}>
         {fontControls}
-        <div style={{ fontSize: 13, color: '#8a8a8a', fontWeight: 700, letterSpacing: 0.5, marginBottom: 6 }}>
+        <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 700, letterSpacing: 0.5, marginBottom: 6 }}>
           ITINERARIO {selectedItinId} · {itin.family.toUpperCase()}
         </div>
         <h1 style={{ fontSize: 25 * fontScale, fontWeight: 800, lineHeight: 1.3, margin: '0 0 18px 0', color: '#17203A' }}>
@@ -4165,7 +4173,7 @@ function MetodoDellaDomandaApp() {
                   <div style={{ fontWeight: 700, fontSize: baseFont * 0.88, color: '#17203A' }}>{itin.cultura.musica.titolo}</div>
                   <div style={{ fontSize: baseFont * 0.78, color: '#5b5b5b' }}>{itin.cultura.musica.nota}</div>
                   {itin.cultura.musica.url.includes('search_query') && (
-                    <div style={{ fontSize: baseFont * 0.7, color: '#8a8a8a', marginTop: 2 }}>Cerca su YouTube &#8594;</div>
+                    <div style={{ fontSize: baseFont * 0.7, color: '#6b6b6b', marginTop: 2 }}>Cerca su YouTube &#8594;</div>
                   )}
                 </span>
               </a>
@@ -4177,7 +4185,7 @@ function MetodoDellaDomandaApp() {
                   <div style={{ fontWeight: 700, fontSize: baseFont * 0.88, color: '#17203A' }}>{itin.cultura.film.titolo}</div>
                   <div style={{ fontSize: baseFont * 0.78, color: '#5b5b5b' }}>{itin.cultura.film.nota}</div>
                   {itin.cultura.film.url.includes('search_query') && (
-                    <div style={{ fontSize: baseFont * 0.7, color: '#8a8a8a', marginTop: 2 }}>Cerca su YouTube &#8594;</div>
+                    <div style={{ fontSize: baseFont * 0.7, color: '#6b6b6b', marginTop: 2 }}>Cerca su YouTube &#8594;</div>
                   )}
                 </span>
               </a>
@@ -4216,7 +4224,7 @@ function MetodoDellaDomandaApp() {
       <div style={shell}><div style={inner}>
         {fontControls}
         <h1 style={{ fontSize: 22 * fontScale, fontWeight: 800, margin: '0 0 4px 0', color: '#17203A' }}>{itin.title}</h1>
-        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', marginBottom: 14, letterSpacing: 0.3 }}>PERCORSO DI ORIENTAMENTO — NON LA SEQUENZA STANDARD</div>
+        <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', marginBottom: 14, letterSpacing: 0.3 }}>PERCORSO DI ORIENTAMENTO — NON LA SEQUENZA STANDARD</div>
         <p style={{ fontSize: baseFont * 0.92, lineHeight: 1.55, color: '#3a3a3a', marginBottom: 20 }}>{table.intro}</p>
 
         {table.tipo === 'informativo' ? (
@@ -4240,7 +4248,7 @@ function MetodoDellaDomandaApp() {
                 <div key={i} style={{ background: '#fff', border: '1.5px solid #d8d2bf', borderRadius: 14, padding: '16px 18px', marginBottom: 12 }}>
                   <p style={{ fontSize: baseFont * 0.95, fontWeight: 700, color: '#17203A', margin: '0 0 10px 0', lineHeight: 1.4 }}>{m.manifestazione}</p>
                   <p style={{ fontSize: baseFont * 0.85, color: '#3a3a3a', margin: '0 0 6px 0', lineHeight: 1.5 }}><strong>Cosa aiuta:</strong> {m.strumento}</p>
-                  <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', margin: '0 0 6px 0' }}>{m.origine}</p>
+                  <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', margin: '0 0 6px 0' }}>{m.origine}</p>
                   <p style={{ fontSize: baseFont * 0.8, color: '#5b5b5b', margin: tool ? '0 0 12px 0' : 0, fontStyle: 'italic' }}>{m.perche}</p>
                   {tool && (
                     <button onClick={() => { previousScreen.current = 'orientamento'; setScreen('tool-' + tool.key); }}
@@ -4254,7 +4262,7 @@ function MetodoDellaDomandaApp() {
 
             {table.cosaFare && (
               <>
-                <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a8a8a', margin: '24px 0 12px 0', letterSpacing: 0.3 }}>COSA FARE, CON LA DOVUTA CAUTELA</div>
+                <div style={{ fontSize: 12.5, fontWeight: 800, color: '#6b6b6b', margin: '24px 0 12px 0', letterSpacing: 0.3 }}>COSA FARE, CON LA DOVUTA CAUTELA</div>
                 {Object.values(table.cosaFare).map((sezione, i) => (
                   <div key={i} style={{ background: '#F5F1E6', borderRadius: 14, padding: '16px 18px', marginBottom: 14 }}>
                     {sezione.pericoloImmediato && (
@@ -4266,7 +4274,7 @@ function MetodoDellaDomandaApp() {
                     {sezione.passi.map((p, j) => (
                       <p key={j} style={{ fontSize: baseFont * 0.85, color: '#3a3a3a', margin: '0 0 8px 0', lineHeight: 1.5 }}>&#8226; {p}</p>
                     ))}
-                    {sezione.nota && <p style={{ fontSize: baseFont * 0.78, color: '#8a8a8a', margin: '10px 0 0 0', fontStyle: 'italic' }}>{sezione.nota}</p>}
+                    {sezione.nota && <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', margin: '10px 0 0 0', fontStyle: 'italic' }}>{sezione.nota}</p>}
                   </div>
                 ))}
               </>
@@ -4311,7 +4319,7 @@ function MetodoDellaDomandaApp() {
       URL.revokeObjectURL(url);
     };
 
-    const decidiAnswer = answers[5]; // 'decidi' step index
+    const decidiAnswer = answers[6]; // 'decidi' step index (STEPS: 0 osserva, 1 distingui, 2 domanda, 3 verifica, 4 limite, 5 aggiorna, 6 decidi, 7 riprendi)
 
     return (
       <div style={shell}><div style={inner}>
@@ -4319,7 +4327,7 @@ function MetodoDellaDomandaApp() {
         <div style={{ textAlign: 'center', marginBottom: 22 }}>
           <CompassProgress activeIndex={TOTAL - 1} size={100} />
           <h1 style={{ fontSize: 26 * fontScale, fontWeight: 800, margin: '14px 0 4px 0', color: '#17203A' }}>Il tuo percorso</h1>
-          {itin && <div style={{ fontSize: baseFont * 0.9, color: '#8a8a8a', fontWeight: 600, marginBottom: 6 }}>{itin.title}</div>}
+          {itin && <div style={{ fontSize: baseFont * 0.9, color: '#6b6b6b', fontWeight: 600, marginBottom: 6 }}>{itin.title}</div>}
           <p style={{ fontSize: baseFont * 0.92, color: '#5b5b5b', margin: 0 }}>
             Il cerchio si chiude qui — ma resta aperto: puoi ripartire da Osserva ogni volta che serve.
           </p>
@@ -4370,7 +4378,7 @@ function MetodoDellaDomandaApp() {
             Se scegli di scaricare, assicurati che il file non possa essere trovato da chi ti fa del male — o scegli di non scaricarlo.
           </p>
         ) : (
-        <p style={{ fontSize: 12.5, color: '#8a8a8a', marginTop: 0, marginBottom: 24, textAlign: 'center' }}>
+        <p style={{ fontSize: 12.5, color: '#6b6b6b', marginTop: 0, marginBottom: 24, textAlign: 'center' }}>
           Salva un file di testo sul tuo dispositivo, così non perdi nulla di ciò che hai scritto.
         </p>
         )}
@@ -4390,12 +4398,12 @@ function MetodoDellaDomandaApp() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
           <CompassProgress activeIndex={stepIndex} size={72} />
           <div>
-            <div style={{ fontSize: 13, color: '#8a8a8a', fontWeight: 600, letterSpacing: 0.3 }}>PASSO {stepIndex + 1} DI {TOTAL}</div>
+            <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 600, letterSpacing: 0.3 }}>PASSO {stepIndex + 1} DI {TOTAL}</div>
             <div style={{ fontSize: 24 * fontScale, fontWeight: 800, color: step.color, lineHeight: 1.2 }}>{step.label}</div>
           </div>
         </div>
         {itin && (
-          <div style={{ fontSize: 12.5, color: '#8a8a8a', marginBottom: 18, fontStyle: 'italic' }}>
+          <div style={{ fontSize: 12.5, color: '#6b6b6b', marginBottom: 18, fontStyle: 'italic' }}>
             Itinerario {selectedItinId}: {itin.title}
           </div>
         )}
@@ -4405,7 +4413,7 @@ function MetodoDellaDomandaApp() {
         </div>
 
         {itin && itin.caution && (
-          <p style={{ fontSize: baseFont * 0.76, color: '#8a8a8a', marginBottom: 18, lineHeight: 1.45, fontStyle: 'italic' }}>
+          <p style={{ fontSize: baseFont * 0.76, color: '#6b6b6b', marginBottom: 18, lineHeight: 1.45, fontStyle: 'italic' }}>
             Le risposte di questo Itinerario vengono salvate automaticamente solo su questo browser/dispositivo (non su un server, non in un account), per permetterti di riprenderle in un secondo momento. Se cancelli i dati di navigazione o cambi dispositivo, andranno perse. Su un dispositivo condiviso, valuta di non riprendere la bozza quando l’app te lo chiede: puoi cancellarla in quel momento.
           </p>
         )}
@@ -4468,15 +4476,20 @@ root.render(<MetodoDellaDomandaApp />);
   // ---------- 1) Service worker: rende l'app utilizzabile offline dopo la prima visita ----------
   // Funziona solo se il file è ospitato su http/https (anche in locale su localhost).
   // Se aperto come file singolo (file://) questa parte semplicemente non fa nulla: nessun errore per l'utente.
-  // Rimuove qualunque service worker di versione diversa da quella attuale
-  // (pulizia automatica di eventuali versioni rotte installate in precedenza),
-  // poi registra la versione attuale, più sicura, che non mette in cache
-  // le librerie esterne (React/Babel) per evitare pagine vuote.
+  // Ripulisce solo eventuali service worker "estranei" (versioni rotte o
+  // installate da un altro percorso in precedenza) e lascia stare quello
+  // attuale se è già quello giusto: registrare di nuovo lo stesso sw.js,
+  // byte per byte identico, non fa ripartire l'installazione né
+  // riscaricare la cache — lo fa solo se il file è davvero cambiato.
+  // (Prima, un unregister incondizionato ad ogni visita forzava una
+  // reinstallazione completa anche quando non era cambiato nulla.)
   if('serviceWorker' in navigator && (location.protocol==='https:' || location.hostname==='localhost')){
     window.addEventListener('load', function(){
       navigator.serviceWorker.getRegistrations().then(function(regs){
-        var hasCurrent = regs.some(function(r){ return r.active && r.active.scriptURL.indexOf('sw.js') !== -1; });
-        return Promise.all(regs.map(function(reg){ return reg.unregister(); }));
+        var stale = regs.filter(function(r){
+          return !(r.active && /\/sw\.js$/.test(r.active.scriptURL));
+        });
+        return Promise.all(stale.map(function(reg){ return reg.unregister(); }));
       }).catch(function(){}).then(function(){
         return navigator.serviceWorker.register('sw.js');
       }).catch(function(){ /* nessun problema: l'app funziona comunque */ });
