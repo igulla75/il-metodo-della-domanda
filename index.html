@@ -3537,6 +3537,7 @@ function MetodoDellaDomandaApp() {
     if (screen === 'bibliografia') { setScreen('filosofia'); return; }
     if (screen === 'privacy') { setScreen('filosofia'); return; }
     if (screen === 'rosa-personale') { setScreen('welcome'); return; }
+    if (screen === 'audiolibro') { setScreen('welcome'); return; }
     if (screen === 'itinerarioList') { setScreen('atlante'); return; }
     if (screen === 'orientamento') { setScreen('landing'); return; }
     if (screen === 'landing') { setScreen(selectedRow ? 'itinerarioList' : 'atlante'); return; }
@@ -3707,6 +3708,7 @@ function MetodoDellaDomandaApp() {
           <button onClick={goNext} style={primaryBtnStyle('#1F4E8C', baseFont)}>Trova il tuo Itinerario</button>
           <button onClick={openJourneyMap} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12 }}>&#127801; La tua Rosa dei Venti</button>
           <button onClick={() => setScreen('filosofia')} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12, borderColor: '#6B4FA0', color: '#6B4FA0' }}>&#128330; Perché domande, non risposte</button>
+          <button onClick={() => setScreen('audiolibro')} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12 }}>&#127911; Ascolta l'audiolibro</button>
         </div>
       </div></div>
     );
@@ -3925,6 +3927,28 @@ function MetodoDellaDomandaApp() {
         ))}
 
         <button onClick={() => setScreen('filosofia')} style={{ ...secondaryBtnStyle(baseFont), width: '100%', marginTop: 12 }}>&#8592; Torna indietro</button>
+      </div></div>
+    );
+  }
+
+  if (screen === 'audiolibro') {
+    return (
+      <div style={shell}><div style={inner}>
+        {fontControls}
+        <h1 style={{ fontSize: 22 * fontScale, fontWeight: 800, margin: '0 0 6px 0', color: '#17203A' }}>&#127911; Audiolibro</h1>
+        <p style={{ fontSize: baseFont * 0.88, color: '#5b5b5b', marginBottom: 20, lineHeight: 1.55 }}>
+          L'intero libro "Viaggio nel buio — Una candela e una bussola", letto ad alta voce (circa 9 ore), per chi preferisce ascoltare — comprese le persone con DSA.
+        </p>
+        <audio controls preload="none" style={{ width: '100%', marginBottom: 16 }}>
+          <source src="https://archive.org/download/viaggio-nel-buio-una-candela-e-una-bussola/Viaggio_nel_buio_-_Una_candela_e_una_bussola.mp3" type="audio/mpeg" />
+          Il tuo browser non supporta la riproduzione audio diretta.
+        </audio>
+        <a href="https://archive.org/download/viaggio-nel-buio-una-candela-e-una-bussola/Viaggio_nel_buio_-_Una_candela_e_una_bussola.mp3"
+           download
+           style={{ ...secondaryBtnStyle(baseFont), display: 'block', textAlign: 'center', textDecoration: 'none', marginBottom: 24 }}>
+          &#11015; Scarica il file audio (mp3, circa 186 MB)
+        </a>
+        <button onClick={() => setScreen('welcome')} style={{ ...secondaryBtnStyle(baseFont), width: '100%' }}>&#8592; Torna indietro</button>
       </div></div>
     );
   }
