@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viaggio nel buio — Ilaria Gullà</title>
+<meta name="description" content="Viaggio nel buio — Una candela e una bussola: Il Metodo della Domanda, di Ilaria Gullà. Libro, audiolibro gratuito e corso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f3e7cc;
+    --navy: #13264a;
+    --navy-soft: #3c4f72;
+    --gold: #9e8249;
+    --gold-soft: #e3d3ab;
+    --card: #fbf6e9;
+    --line: #ddceaa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  a { text-decoration: none; }
+  img { max-width: 100%; }
+  .wrap { width: 100%; max-width: 1100px; margin: 0 auto; padding-inline: 24px; }
+
+  .hero {
+    padding-block: 64px 48px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero img {
+    width: 260px;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px -20px rgba(19,38,74,0.45);
+    flex-shrink: 0;
+  }
+  .hero-text { max-width: 540px; min-width: 260px; }
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.14em; font-weight: 600;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(32px, 5vw, 52px); line-height: 1.05; margin: 0 0 8px;
+  }
+  .subtitle {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 500;
+    font-size: clamp(17px, 2vw, 20px); color: var(--navy-soft); margin: 0 0 20px;
+  }
+  .lead { font-size: 16px; line-height: 1.65; color: var(--navy-soft); margin: 0 0 16px; }
+  .author { font-size: 14px; color: var(--gold); font-weight: 600; margin: 0; }
+
+  section.block { padding-block: 32px 8px; }
+  h2 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 24px; margin: 0 0 6px; }
+  .block-lead { font-size: 14px; color: var(--navy-soft); margin: 0 0 24px; }
+
+  .cards { display: flex; flex-wrap: wrap; gap: 18px; }
+  .card {
+    flex: 1 1 280px; min-width: 240px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 24px; display: flex; flex-direction: column; gap: 12px;
+  }
+  .card.pending { opacity: 0.72; }
+  .card-label {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 600; color: var(--gold);
+  }
+  .card-title { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; }
+  .card-copy { font-size: 13px; color: var(--navy-soft); line-height: 1.55; margin: 0; flex-grow: 1; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--navy); color: var(--cream); font-weight: 600; font-size: 13px;
+    padding: 11px 16px; border-radius: 6px;
+  }
+  .btn.pending {
+    background: transparent; color: var(--navy-soft);
+    border: 1.5px dashed var(--line);
+  }
+
+  .audiobook {
+    background: var(--navy); color: var(--cream); border-radius: 10px;
+    padding: 32px 28px; display: flex; flex-wrap: wrap; gap: 20px;
+    align-items: center; justify-content: space-between; margin-top: 8px;
+  }
+  .audiobook-label {
+    font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 600; color: var(--gold-soft); margin-bottom: 6px;
+  }
+  .audiobook-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .audiobook-copy { font-size: 14px; line-height: 1.6; color: #d7dcea; margin: 0; max-width: 560px; }
+  .btn-gold {
+    display: inline-flex; align-items: center; justify-content: center; white-space: nowrap;
+    background: var(--gold); color: var(--navy); font-weight: 700; font-size: 13px;
+    padding: 13px 22px; border-radius: 6px; flex-shrink: 0;
+  }
+
+  footer {
+    padding-block: 48px 56px; margin-top: 24px; border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;
+  }
+  .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+    color: var(--navy-soft); max-width: 560px;
+  }
+  .foot-author { font-size: 13px; color: var(--gold); margin-top: 12px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <section class="hero">
+    <img src="cover.png" alt="Copertina di Viaggio nel buio: su sfondo blu notte, una candela accesa e una bussola dorata">
+    <div class="hero-text">
+      <div class="eyebrow">Il Metodo della Domanda</div>
+      <h1>Viaggio nel buio</h1>
+      <p class="subtitle">Una candela e una bussola</p>
+      <p class="lead">Uno strumento pratico per pensare con chiarezza nei momenti difficili: sei strumenti di osservazione e trentadue situazioni di vita reale, per imparare a farsi la domanda giusta prima di reagire.</p>
+      <p class="author">di Ilaria Gullà</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Il libro</h2>
+    <p class="block-lead">Disponibile in tre formati, dove preferisci leggerlo o ascoltarlo.</p>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-label">Amazon</div>
+        <div class="card-title">Cartaceo ed ebook</div>
+        <p class="card-copy">Copertina flessibile, oltre 500 pagine, oppure l'edizione Kindle.</p>
+        <a class="btn" href="https://www.amazon.it/dp/B0HLWHB139">Vai alla pagina Amazon →</a>
+      </div>
+
+      <div class="card pending">
+        <div class="card-label">Kobo</div>
+        <div class="card-title">Ebook</div>
+        <p class="card-copy">Anche su Kobo, per chi legge sui propri dispositivi.</p>
+        <span class="btn pending">Link in arrivo</span>
+      </div>
+
+      <div class="card pending">
+        <div class="card-label">Google Play Libri</div>
+        <div class="card-title">Ebook</div>
+        <p class="card-copy">In pubblicazione: l'account è in fase di verifica.</p>
+        <span class="btn pending">Link in arrivo</span>
+      </div>
+
+    </div>
+
+    <div class="audiobook">
+      <div>
+        <div class="audiobook-label">Gratuito</div>
+        <div class="audiobook-title">Ascolta l'audiolibro, per intero</div>
+        <p class="audiobook-copy">La narrazione integrale del libro, in 9 parti, in streaming o da scaricare. Nessuna app da installare.</p>
+      </div>
+      <a class="btn-gold" href="audiolibro.html">Ascolta ora →</a>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Il corso</h2>
+    <p class="block-lead">Il Metodo della Domanda spiegato passo per passo, in video.</p>
+    <div class="cards">
+
+      <div class="card pending">
+        <div class="card-label">Udemy</div>
+        <div class="card-title">Corso completo</div>
+        <p class="card-copy">41 lezioni video, dalle Tappe del Metodo a ogni Itinerario. In pubblicazione.</p>
+        <span class="btn pending">Link in arrivo</span>
+      </div>
+
+      <div class="card">
+        <div class="card-label">Gumroad</div>
+        <div class="card-title">Pagina dell'autrice</div>
+        <p class="card-copy">Il corso e gli altri contenuti di Ilaria Gullà.</p>
+        <a class="btn" href="https://igullasphere.gumroad.com/">Vai su Gumroad →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="quote">"Una mappa non deve essere perfetta per essere utile — deve solo essere un po' più vera di quella con cui sei partito."</div>
+    <div class="foot-author">Ilaria Gullà</div>
+  </footer>
+
+</div>
+</body>
+</html>
