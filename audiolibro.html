@@ -1,190 +1,318 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Audiolibro — Viaggio nel buio</title>
+<meta name="description" content="Ascolta gratuitamente l'audiolibro completo di Viaggio nel buio — Una candela e una bussola, di Ilaria Gullà.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #14284B;
-    --cream: #F3E2BC;
-    --light: #EAD9AE;
-    --gold: #C9962C;
-    --olive: #5C6B2E;
-    --dark-text: #2B2416;
+    --cream: #f3e7cc; --navy: #13264a; --navy-soft: #3c4f72;
+    --gold: #9e8249; --gold-soft: #e3d3ab; --card: #fbf6e9; --line: #ddceaa;
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--cream);
-    color: var(--dark-text);
-    font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.6;
-    padding: 24px 16px 64px;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-family: Georgia, serif;
-    color: var(--navy);
-    font-size: 1.9rem;
-    margin: 0 0 4px;
-  }
-  .subtitle {
-    color: var(--olive);
-    font-style: italic;
-    margin: 0 0 28px;
-    font-size: 1.05rem;
-  }
-  .player-card {
-    background: var(--light);
-    border: 1.5px solid var(--gold);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  .player-card h2 {
-    font-family: Georgia, serif;
-    color: var(--navy);
-    font-size: 1.15rem;
-    margin: 0 0 8px;
-  }
-  audio {
-    width: 100%;
-    margin-top: 10px;
-  }
-  .meta {
-    font-size: 0.95rem;
-    color: var(--dark-text);
-    margin-top: 10px;
-  }
-  a.download-link {
-    display: inline-block;
-    margin-top: 14px;
-    color: var(--navy);
-    background: var(--gold);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-family: Arial, sans-serif;
-    font-size: 0.95rem;
-  }
-  a.download-link:hover { opacity: 0.9; }
-  .note {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.95rem;
-    background: #ffffffaa;
-    border-left: 4px solid var(--olive);
-    padding: 14px 16px;
-    border-radius: 4px;
-    margin-top: 8px;
-    margin-bottom: 28px;
-  }
-  .note strong { color: var(--navy); }
-  footer {
-    margin-top: 40px;
-    font-size: 0.85rem;
-    color: var(--olive);
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
+  body { margin:0; font-family:'Inter',system-ui,sans-serif; background:var(--cream); color:var(--navy); }
+  a { text-decoration:none; }
+  .wrap { width:100%; max-width:760px; margin:0 auto; padding-inline:24px; padding-block:48px 64px; }
+  .eyebrow { font-size:13px; letter-spacing:.14em; font-weight:600; color:var(--gold); text-transform:uppercase; margin-bottom:14px; }
+  h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(28px,5vw,42px); line-height:1.1; margin:0 0 10px; }
+  .lead { font-size:15px; line-height:1.6; color:var(--navy-soft); margin:0 0 8px; max-width:560px; }
+  .note { font-size:13px; line-height:1.6; color:var(--navy-soft); background:var(--card); border:1px solid var(--line);
+           border-radius:8px; padding:14px 16px; margin:20px 0 36px; }
+  .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--gold); margin-bottom:28px; }
+  h2.section { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:40px 0 14px; color:var(--navy);
+                border-top:1px solid var(--line); padding-top:28px; }
+  .tracks { display:flex; flex-direction:column; gap:10px; }
+  .track { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px;
+            display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; }
+  .track-title { font-size:14px; font-weight:600; flex:1 1 220px; min-width:180px; }
+  audio { flex:1 1 260px; min-width:220px; max-width:100%; height:32px; }
+  .dl { font-size:12px; font-weight:700; color:var(--navy); background:var(--gold-soft); border-radius:5px;
+         padding:6px 10px; white-space:nowrap; }
+  footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--line); text-align:center; }
+  .quote { font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--navy-soft); max-width:520px; margin:0 auto; }
+  .foot-author { font-size:13px; color:var(--gold); margin-top:12px; font-weight:600; }
+  @media (max-width:480px) { .track { flex-direction:column; align-items:stretch; } audio { width:100%; } }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Audiolibro</h1>
-  <p class="subtitle">Viaggio nel buio — Una candela e una bussola</p>
+  <a class="back" href="libro.html">← Torna alla pagina del libro</a>
+  <div class="eyebrow">Gratuito &middot; versione integrale</div>
+  <h1>Audiolibro — Viaggio nel buio</h1>
+  <p class="lead">La narrazione integrale del libro, divisa in 52 tracce per capitolo, tutta leggibile in streaming o scaricabile. Nessuna app da installare.</p>
+  <div class="note">Le tracce sono divise solo per rendere i file più leggeri da scaricare: la storia continua senza interruzioni da un file all'altro. Pensato anche per chi trova l'ascolto più semplice della lettura, incluse le persone con DSA.</div>
 
-  <div class="note">
-    <strong>Un audiolibro pensato per chi trova più facile ascoltare che leggere</strong> — comprese le persone con DSA (Disturbi Specifici dell'Apprendimento). La voce è generata artificialmente in modo naturale; se preferisci puoi anche solo scaricare i file e ascoltarli offline, senza bisogno di connessione. L'audiolibro è diviso in 9 parti di circa un'ora ciascuna, per rendere più semplice il download e l'ascolto da dove hai interrotto.
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 1</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_01.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_01.mp3" download>⬇ Scarica Parte 1 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 2</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_02.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_02.mp3" download>⬇ Scarica Parte 2 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 3</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_03.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_03.mp3" download>⬇ Scarica Parte 3 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 4</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_04.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_04.mp3" download>⬇ Scarica Parte 4 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 5</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_05.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_05.mp3" download>⬇ Scarica Parte 5 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 6</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_06.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_06.mp3" download>⬇ Scarica Parte 6 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 7</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_07.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_07.mp3" download>⬇ Scarica Parte 7 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 8</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_08.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_08.mp3" download>⬇ Scarica Parte 8 (mp3, ~25 MB)</a>
-  </div>
-
-  <div class="player-card">
-    <h2>Parte 9</h2>
-    <audio controls preload="none">
-      <source src="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_09.mp3" type="audio/mpeg">
-      Il tuo browser non supporta la riproduzione audio diretta.
-    </audio>
-    <a class="download-link" href="https://archive.org/download/viaggio-nel-buio-parte-01/Viaggio_nel_buio_parte_09.mp3" download>⬇ Scarica Parte 9 (mp3, ~25 MB)</a>
+  <h2 class="section">Tutte le tracce</h2>
+  <div class="tracks">
+      <div class="track">
+        <div class="track-title">Ascolta l&#x27;audiolibro</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/00_Ascolta_l%27audiolibro.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/00_Ascolta_l%27audiolibro.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">PARTE 1 — Le porte del viaggio</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/01_PARTE_1_%E2%80%93_Le_porte_del_viaggio.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/01_PARTE_1_%E2%80%93_Le_porte_del_viaggio.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Nota sull&#x27;origine di questo testo</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/02_Nota_sull%E2%80%99origine_di_questo_testo.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/02_Nota_sull%E2%80%99origine_di_questo_testo.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Dedica</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/03_Dedica.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/03_Dedica.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Ringraziamenti</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/04_Ringraziamenti.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/04_Ringraziamenti.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Prefazione</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/05_Prefazione.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/05_Prefazione.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Prima di metterti in cammino</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/06_Prima_di_metterti_in_cammino.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/06_Prima_di_metterti_in_cammino.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Giuramento del Viaggiatore</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/07_Giuramento_del_Viaggiatore.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/07_Giuramento_del_Viaggiatore.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">La Rosa dei Venti del Metodo</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/08_La_Rosa_dei_Venti_del_Metodo.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/08_La_Rosa_dei_Venti_del_Metodo.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Leggere la Rosa dei Venti</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/09_Leggere_la_Rosa_dei_Venti.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/09_Leggere_la_Rosa_dei_Venti.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">I Principi del Metodo della Domanda</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/10_I_Principi_del_Metodo_della_Domanda.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/10_I_Principi_del_Metodo_della_Domanda.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Inizia il viaggio</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/11_Inizia_il_viaggio.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/11_Inizia_il_viaggio.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">PARTE 2 — Imparare a Vedere</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/12_PARTE_2_%E2%80%93_Imparare_a_Vedere.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/12_PARTE_2_%E2%80%93_Imparare_a_Vedere.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 1 — Sto osservando i fatti, o sto già osservando una storia? (1/2)</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/13_Tappa_1_%E2%80%94_Sto_osservando_i_fatti%2C_o_sto_gi%C3%A0_osservando_una_storia_Part_1.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/13_Tappa_1_%E2%80%94_Sto_osservando_i_fatti%2C_o_sto_gi%C3%A0_osservando_una_storia_Part_1.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 1 — Sto osservando i fatti, o sto già osservando una storia? (2/2)</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/14_Tappa_1_%E2%80%94_Sto_osservando_i_fatti%2C_o_sto_gi%C3%A0_osservando_una_storia_Part_2.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/14_Tappa_1_%E2%80%94_Sto_osservando_i_fatti%2C_o_sto_gi%C3%A0_osservando_una_storia_Part_2.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 1</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/15_Atlante_1_%E2%80%93_Posso_usare_la_bussola_cos%27%C3%A8_questo_Atlante.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/15_Atlante_1_%E2%80%93_Posso_usare_la_bussola_cos%27%C3%A8_questo_Atlante.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 1 — Restare davanti a ciò che è</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/16_Sosta_1_%E2%80%93_Restare_davanti_a_ci%C3%B2_che_%C3%A8.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/16_Sosta_1_%E2%80%93_Restare_davanti_a_ci%C3%B2_che_%C3%A8.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 2 — Sintomo, causa o problema?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/17_Tappa_2_-_Sintomo%2C_causa_o_problema_%E2%80%94_che_cosa_ho_davvero_davanti_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/17_Tappa_2_-_Sintomo%2C_causa_o_problema_%E2%80%94_che_cosa_ho_davvero_davanti_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">La Bussola della Domanda</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/18_La_Bussola_della_Domanda.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/18_La_Bussola_della_Domanda.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 2</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/19_Atlante_2_%E2%80%93_La_bussola_della_domanda.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/19_Atlante_2_%E2%80%93_La_bussola_della_domanda.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 2 — Guardare con altri occhi</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/20_Sosta_2_%E2%80%93_Guardare_con_altri_occhi.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/20_Sosta_2_%E2%80%93_Guardare_con_altri_occhi.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 3 — Ho davvero verificato?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/21_Tappa_3_%E2%80%94_Ho_davvero_verificato%2C_o_ho_solo_cercato_conferme_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/21_Tappa_3_%E2%80%94_Ho_davvero_verificato%2C_o_ho_solo_cercato_conferme_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 3</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/22_Atlante_3_%E2%80%93_Come_verifico_davvero_un%27ipotesi_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/22_Atlante_3_%E2%80%93_Come_verifico_davvero_un%27ipotesi_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 3 — Guardare ciò che smentisce</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/23_Sosta_3_%E2%80%93_Guardare_ci%C3%B2_che_smentisce.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/23_Sosta_3_%E2%80%93_Guardare_ci%C3%B2_che_smentisce.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 4 — Quanto devo ancora cercare?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/24_Tappa_4_%E2%80%94_Quanto_devo_ancora_cercare%2C_prima_di_decidere_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/24_Tappa_4_%E2%80%94_Quanto_devo_ancora_cercare%2C_prima_di_decidere_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 4</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/25_Atlante_4_%E2%80%93_Come_riconosco_il_momento_di_decidere_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/25_Atlante_4_%E2%80%93_Come_riconosco_il_momento_di_decidere_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 4 — Fermarsi, e scegliere lo stesso</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/26_Sosta_4_%E2%80%93_Fermarsi%2C_e_scegliere_lo_stesso.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/26_Sosta_4_%E2%80%93_Fermarsi%2C_e_scegliere_lo_stesso.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 5 — Sto correggendo la mappa?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/27_Tappa_5_%E2%80%94_Sto_correggendo_la_mappa%2C_o_la_sto_solo_difendendo_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/27_Tappa_5_%E2%80%94_Sto_correggendo_la_mappa%2C_o_la_sto_solo_difendendo_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 5</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/28_Atlante_5_%E2%80%93_Sto_aggiornando_la_mappa%2C_o_la_sto_difendendo_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/28_Atlante_5_%E2%80%93_Sto_aggiornando_la_mappa%2C_o_la_sto_difendendo_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 5 — Correggere la rotta</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/29_Sosta_5_%E2%80%93_Correggere_la_rotta.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/29_Sosta_5_%E2%80%93_Correggere_la_rotta.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Tappa 6 — Sto ascoltando?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/30_Tappa_6_%E2%80%94_Sto_ascoltando%2C_o_sto_solo_aspettando_il_mio_turno_per_parlare_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/30_Tappa_6_%E2%80%94_Sto_ascoltando%2C_o_sto_solo_aspettando_il_mio_turno_per_parlare_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante 6</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/31_Atlante_6_%E2%80%93_Sto_ascoltando%2C_o_sto_solo_aspettando_il_mio_turno_per_parlare_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/31_Atlante_6_%E2%80%93_Sto_ascoltando%2C_o_sto_solo_aspettando_il_mio_turno_per_parlare_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Sosta 6 — Ascoltare come si guarda una mappa diversa</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/32_Sosta_6_%E2%80%93_Ascoltare_come_si_guarda_una_mappa_diversa.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/32_Sosta_6_%E2%80%93_Ascoltare_come_si_guarda_una_mappa_diversa.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Quando il viaggiatore non riesce a partire</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/33_Quando_il_viaggiatore_non_riesce_a_partire.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/33_Quando_il_viaggiatore_non_riesce_a_partire.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 1 — Come posso ritrovare lucidità quando corpo e mente sono in difficoltà?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/34_Itinerario_1_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_ritrovare_lucidit%C3%A0_quando_corpo_e_mente_sono_in_difficolt%C3%A0_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/34_Itinerario_1_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_ritrovare_lucidit%C3%A0_quando_corpo_e_mente_sono_in_difficolt%C3%A0_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 2 — Come posso osservare meglio prima di cercare una soluzione?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/35_Itinerario_2_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_osservare_meglio_prima_di_cercare_una_soluzione_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/35_Itinerario_2_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_osservare_meglio_prima_di_cercare_una_soluzione_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 3 — Come posso distinguere i fatti dalle interpretazioni?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/36_Itinerario_3_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_distinguere_i_fatti_dalle_interpretazioni_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/36_Itinerario_3_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_distinguere_i_fatti_dalle_interpretazioni_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 4 — Come posso formulare domande migliori?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/37_Itinerario_4_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_formulare_domande_migliori_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/37_Itinerario_4_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_formulare_domande_migliori_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 5 — Come posso costruire e verificare ipotesi più solide?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/38_Itinerario_5_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_costruire_e_verificare_ipotesi_pi%C3%B9_solide_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/38_Itinerario_5_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_costruire_e_verificare_ipotesi_pi%C3%B9_solide_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 6 — Come posso scegliere il metodo più adatto al problema?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/39_Itinerario_6_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_scegliere_il_metodo_pi%C3%B9_adatto_al_problema_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/39_Itinerario_6_%E2%80%94_Il_metodo_%E2%80%94_osservare_e_decidere_%E2%80%94_Come_posso_scegliere_il_metodo_pi%C3%B9_adatto_al_problema_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 7 — Come posso affrontare ciò che non si può risolvere?</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/40_Itinerario_7_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_affrontare_ci%C3%B2_che_non_si_pu%C3%B2_risolvere_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/40_Itinerario_7_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_affrontare_ci%C3%B2_che_non_si_pu%C3%B2_risolvere_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 8 — Come posso pensare con chiarezza, immerso in una condizione che non dipende da me? (1/2)</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/41_Itinerario_8_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_pensare_con_chiarezza_immerso_una_condizione_che_non_dipende_da_me_Part_1.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/41_Itinerario_8_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_pensare_con_chiarezza_immerso_una_condizione_che_non_dipende_da_me_Part_1.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 8 — Come posso pensare con chiarezza, immerso in una condizione che non dipende da me? (2/2)</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/42_Itinerario_8_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_pensare_con_chiarezza_immerso_una_condizione_che_non_dipende_da_me_Part_2.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/42_Itinerario_8_%E2%80%94_Il_limite_che_non_si_sposta_%E2%80%94_Come_posso_pensare_con_chiarezza_immerso_una_condizione_che_non_dipende_da_me_Part_2.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Itinerario 32 — Violenza e manipolazione</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/43_Itinerario_32_%E2%80%94_Violenza_e_manipolazione_%E2%80%94_Come_posso_riconoscere_la_violenza_fisica%2C_psicologica_o_economica%2C_e_la_manipolazione_.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/43_Itinerario_32_%E2%80%94_Violenza_e_manipolazione_%E2%80%94_Come_posso_riconoscere_la_violenza_fisica%2C_psicologica_o_economica%2C_e_la_manipolazione_.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Atlante — Come trovare il tuo itinerario</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/44_Atlante_%E2%80%93_Come_trovare_il_tuo_itinerario.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/44_Atlante_%E2%80%93_Come_trovare_il_tuo_itinerario.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Esempi dal cammino</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/45_Esempi_dal_cammino.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/45_Esempi_dal_cammino.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">PARTE 4 — Il dubbio</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/46_Parte_4_-_Il_dubbio.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/46_Parte_4_-_Il_dubbio.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Il metodo messo alla prova — Quando fare tutto bene non è sufficiente</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/47_Il_metodo_messo_alla_provaQuando_fare_tutto_bene_non_%C3%A8_sufficiente.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/47_Il_metodo_messo_alla_provaQuando_fare_tutto_bene_non_%C3%A8_sufficiente.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">APPENDICE — La bussola nella macchina</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/48_APPENDICE_%E2%80%94_LA_BUSSOLA_NELLA_MACCHINA.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/48_APPENDICE_%E2%80%94_LA_BUSSOLA_NELLA_MACCHINA.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">APPENDICE — La rosa ed il clima</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/49_APPENDICE_-_LA_ROSA_ED_IL_CLIMA.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/49_APPENDICE_-_LA_ROSA_ED_IL_CLIMA.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">APPENDICE — Il corpo giudicato</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/50_APPENDICE_%E2%80%94_IL_CORPO_GIUDICATO.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/50_APPENDICE_%E2%80%94_IL_CORPO_GIUDICATO.mp3">Scarica ↓</a>
+      </div>
+      <div class="track">
+        <div class="track-title">Bibliografia ragionata</div>
+        <audio controls preload="none" src="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/51_Bibliografia_ragionata.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/41-itinerario-8-il-limite-che-non-si-sposta-come-posso-pensare-con-chiarezza-imm/51_Bibliografia_ragionata.mp3">Scarica ↓</a>
+      </div>
   </div>
 
   <footer>
-    Viaggio nel buio — Una candela e una bussola · Ilaria Gullà
+    <div class="quote">&ldquo;Una mappa non deve essere perfetta per essere utile &mdash; deve solo essere un po&rsquo; più vera di quella con cui sei partito.&rdquo;</div>
+    <div class="foot-author">Ilaria Gullà</div>
   </footer>
 </div>
 </body>
