@@ -1225,6 +1225,7 @@ const TOOLS_LIST = [
   { key: 'cnv', title: 'Comunicazione Nonviolenta', subtitle: 'Osservazione, sentimento, bisogno, richiesta', color: '#C2185B', icon: '\u{1F4AC}' , itinerari: [6, 20] },
   { key: 'colora-respira', title: 'Colora e respira', subtitle: 'Uno schema strutturato, un ritmo lento', color: '#6B4FA0', icon: '\u{1F3A8}' , itinerari: [] },
   { key: 'eccitazione', title: 'Dall\u2019ansia all\u2019eccitazione', subtitle: 'Prima di una prestazione, non calmarti: riformula', color: '#D4A017', icon: '\u26A1' , itinerari: [1] },
+  { key: 'verifica-attendibilita', title: 'Verificare prima di credere', subtitle: 'Notizie, voto, risposte di un’IA, esercizi — le sei Tappe applicate', color: '#17203A', icon: '🔍', itinerari: [] }
 ];
 
 // ============ 1. RESPIRAZIONE GUIDATA ============
@@ -3296,7 +3297,196 @@ function ExcitementReappraisalTool({ baseFont, onExit }) {
     </div>
   );
 }
+function VerificaAttendibilitaTool({ baseFont, onExit }) {
+  const CASES = {
+    notizia: {
+      label: 'Una notizia', icon: '📰', color: '#0F7A6B', hasText: true,
+      intro: 'Incolla qui il testo della notizia (o descrivila a parole tue) prima di condividerla.',
+      placeholder: 'Es. "Crollo di un ponte nella notte, decine di feriti" — il testo del post o dell’articolo...',
+      steps: [
+        { q: 'Sto osservando i fatti, o sto già osservando una storia?', example: 'Il fatto osservabile è che questo post circola online — non ancora che l’evento sia accaduto davvero.', placeholder: 'Qual è il fatto osservabile, distinto dalla storia che racconta?' },
+        { q: 'Sintomo, causa o problema — cosa ho davvero davanti?', example: 'Il post è un sintomo (la voglia di condividere, l’ansia collettiva). Il problema reale è se l’evento sia accaduto o no.', placeholder: 'Cosa è sintomo, e cosa è il problema reale?' },
+        { q: 'Ho davvero verificato, o ho solo cercato conferme?', example: 'Ho cercato la notizia su almeno due fonti indipendenti o un comunicato ufficiale; ho controllato la foto con una ricerca per immagini.', placeholder: 'Cosa hai controllato, concretamente?' },
+        { q: 'Quanto devo ancora cercare, prima di decidere?', example: 'Se nessuna fonte affidabile lo confirma in un tempo ragionevole, aspetto prima di condividere.', placeholder: 'Quando ti fermerai a cercare e deciderai?' },
+        { q: 'Sto correggendo la mappa, o la sto solo difendendo?', example: 'Se la foto risulta vecchia, lo accetto — anche se avevo già condiviso il post.', placeholder: 'Cosa ti farebbe cambiare idea, e lo accetteresti davvero?' },
+        { q: 'Sto ascoltando, o sto solo aspettando il mio turno per parlare?', example: 'Leggo anche chi dice "è una bufala", e controllo a mia volta le sue fonti.', placeholder: 'Hai letto davvero chi dice il contrario?' },
+      ],
+    },
+    voto: {
+      label: 'Uno spot o una promessa elettorale', icon: '🗳️', color: '#C0392B', hasText: true,
+      intro: 'Incolla qui lo slogan o la promessa (es. di uno spot elettorale) prima di valutarla.',
+      placeholder: 'Es. "Con la nostra riforma, la disoccupazione scenderà del 50% in un anno."',
+      steps: [
+        { q: 'Sto osservando i fatti, o sto già osservando una storia?', example: 'Il fatto osservabile è che il candidato ha pronunciato questa promessa. Il "-50%" è una previsione, non un fatto già accaduto.', placeholder: 'Cosa è stato detto, e cosa è solo previsto?' },
+        { q: 'Sintomo, causa o problema — cosa ho davvero davanti?', example: 'Il problema (la disoccupazione) è reale. La riforma proposta è un’ipotesi di soluzione, non ancora una causa verificata.', placeholder: 'Cosa è il problema reale, e cosa è solo una proposta di soluzione?' },
+        { q: 'Ho davvero verificato, o ho solo cercato conferme?', example: 'Ho letto il testo della riforma, non solo lo spot; ho cercato dati di istituti indipendenti su misure simili già applicate altrove.', placeholder: 'Cosa hai letto oltre allo slogan?' },
+        { q: 'Quanto devo ancora cercare, prima di decidere?', example: 'Confronto almeno due fonti di segno opposto — una favorevole e una critica — prima di valutarla credibile.', placeholder: 'Hai letto almeno una fonte critica e una favorevole?' },
+        { q: 'Sto correggendo la mappa, o la sto solo difendendo?', example: 'Se i dati storici mostrano che misure simili non hanno mai raggiunto quel risultato, aggiorno la mia valutazione — anche verso un partito che sostengo.', placeholder: 'Cosa ti farebbe cambiare idea, anche se sostieni già questo partito?' },
+        { q: 'Sto ascoltando, o sto solo aspettando il mio turno per parlare?', example: 'Ascolto l’argomentazione tecnica di chi sostiene la riforma, cercando il merito, non solo la cornice politica.', placeholder: 'Hai ascoltato l’argomentazione tecnica, non solo lo slogan opposto?' },
+      ],
+    },
+    ia: {
+      label: 'Una risposta di un’IA', icon: '🤖', color: '#1F4E8C', hasText: true,
+      intro: 'Incolla qui la risposta del chatbot che vuoi controllare.',
+      placeholder: 'Es. "Secondo i dati, la riforma porterebbe a una crescita del 3,2% del PIL entro il 2027..."',
+      steps: [
+        { q: 'Sto osservando i fatti, o sto già osservando una storia?', example: 'Il fatto osservabile è che il chatbot ha generato questo testo. Le cifre non diventano un fatto verificato solo perché espresse con sicurezza.', placeholder: 'Cosa è certo (il testo esiste) e cosa è solo affermato (il contenuto)?' },
+        { q: 'Sintomo, causa o problema — cosa ho davvero davanti?', example: 'Una risposta sicura e dettagliata è un sintomo di come il modello genera testo plausibile — non necessariamente un segno di accuratezza.', placeholder: 'La sicurezza del tono ti sta convincendo più del contenuto?' },
+        { q: 'Ho davvero verificato, o ho solo cercato conferme?', example: 'Ho chiesto al chatbot le sue fonti, poi le ho controllate una per una: esistono davvero? Dicono davvero quello?', placeholder: 'Hai controllato le fonti citate, una per una?' },
+        { q: 'Quanto devo ancora cercare, prima di decidere?', example: 'Non mi accontento di una sola richiesta di chiarimento: incrocio con almeno una fonte umana indipendente.', placeholder: 'Hai incrociato con una fonte umana indipendente?' },
+        { q: 'Sto correggendo la mappa, o la sto solo difendendo?', example: 'Se le fonti citate risultano inesistenti o travisate, scarto la risposta — anche se era formulata in modo convincente.', placeholder: 'Scarteresti la risposta se le fonti risultassero false?' },
+        { q: 'Sto ascoltando, o sto solo aspettando il mio turno per parlare?', example: 'Non tratto il disaccordo tra due risposte come un errore da ignorare, ma come un segnale da approfondire.', placeholder: 'Se due risposte si contraddicono, lo approfondisci o lo ignori?' },
+      ],
+    },
+    esercizio: {
+      label: 'Un esercizio (matematica, fisica, informatica)', icon: '🧮', color: '#6B4FA0', hasText: false,
+      intro: 'Qui i controlli sono più oggettivi: la materia stessa offre strumenti di verifica indipendenti dal tono della risposta.',
+      steps: [
+        { q: 'Sto osservando i fatti, o sto già osservando una storia?', example: 'Un passaggio è un fatto solo se lo rifai tu stesso e ottieni lo stesso risultato — finché non l’hai rifatto, è solo un’affermazione.', placeholder: 'Hai rifatto tu stesso il passaggio chiave?' },
+        { q: 'Sintomo, causa o problema — cosa ho davvero davanti?', example: 'È un errore di impostazione (il problema è stato capito male) o un errore di calcolo (il procedimento è giusto ma un numero è sbagliato)?', placeholder: 'È un errore di impostazione o di calcolo?' },
+        { q: 'Ho davvero verificato, o ho solo cercato conferme?', example: 'Ho controllato le unità di misura a ogni riga (analisi dimensionale) e ho sostituito il risultato nell’equazione di partenza.', placeholder: 'Hai controllato le unità e sostituito il risultato nell’equazione?' },
+        { q: 'Quanto devo ancora cercare, prima di decidere?', example: 'Ho provato un caso limite con risposta nota (v→0, un caso particolare) e ho verificato che la soluzione generale collassi su quello.', placeholder: 'C’è un caso limite che puoi provare?' },
+        { q: 'Sto correggendo la mappa, o la sto solo difendendo?', example: 'Se il caso limite non torna, non salvo il passaggio: torno indietro e correggo, anche se il resto sembrava convincente.', placeholder: 'Torneresti indietro se un caso limite non tornasse?' },
+        { q: 'Sto ascoltando, o sto solo aspettando il mio turno per parlare?', example: 'Risolvo lo stesso problema con un metodo alternativo (un altro teorema, un’altra via) e controllo che il risultato coincida.', placeholder: 'Puoi risolverlo in un secondo modo, per controllo?' },
+      ],
+    },
+  };
 
+  const [phase, setPhase] = useState('choose');
+  const [caseKey, setCaseKey] = useState(null);
+  const [text, setText] = useState('');
+  const [flags, setFlags] = useState([]);
+  const [stepIndex, setStepIndex] = useState(0);
+  const [answers, setAnswers] = useState(['', '', '', '', '', '']);
+
+  const chooseCase = (k) => {
+    setCaseKey(k);
+    setPhase(CASES[k].hasText ? 'input' : 'steps');
+  };
+
+  const analyze = () => {
+    const found = [];
+    if (!/https?:\/\/|www\.|\bfonte\b|\bsecondo\b/i.test(text)) {
+      found.push('Non c’è nessun link o fonte citata nel testo: non c’è ancora nulla da verificare.');
+    }
+    if (/\d{1,3}[.,]\d{1,2}\s?%|\b\d{1,3}\.\d{3}\b/.test(text)) {
+      found.push('C’è almeno una cifra molto precisa: va controllata con una fonte reale, non basta che sembri esatta.');
+    }
+    if (/\bsicuramente\b|\bsenza dubbio\b|\bcertamente\b|\bgarantit[oa]\b|\bgarantiamo\b|è un fatto che/i.test(text)) {
+      found.push('Il testo usa parole di certezza assoluta ("sicuramente", "garantito"...): il tono sicuro non è una prova.');
+    }
+    if (!/\bcirca\b|\bstimat[oa]\b|\bapprossimativ|\bsecondo alcune fonti\b|\bpotrebbe\b/i.test(text)) {
+      found.push('Non ci sono parole di cautela ("circa", "stimato"...): se il testo riguarda dati non ancora certi, dovrebbero esserci.');
+    }
+    if (found.length === 0) {
+      found.push('Nessun segnale automatico rilevato — non significa che sia tutto vero: continua comunque con le sei Tappe.');
+    }
+    setFlags(found);
+    setPhase('flags');
+  };
+
+  const updateAnswer = (val) => setAnswers((prev) => { const next = [...prev]; next[stepIndex] = val; return next; });
+  const goNext = () => { if (stepIndex < 5) setStepIndex(stepIndex + 1); else setPhase('summary'); };
+  const goBack = () => { if (stepIndex > 0) setStepIndex(stepIndex - 1); else setPhase(CASES[caseKey].hasText ? 'flags' : 'choose'); };
+  const restart = () => { setPhase('choose'); setCaseKey(null); setText(''); setFlags([]); setStepIndex(0); setAnswers(['', '', '', '', '', '']); };
+
+  if (phase === 'choose') {
+    return (
+      <div>
+        <div style={card}>
+          <p style={{ fontSize: baseFont * 0.9, color: '#5b5b5b', margin: 0, lineHeight: 1.5 }}>
+            Scegli cosa vuoi controllare prima di fidartene. Lo strumento non dice se è vero o falso: aiuta a non saltare i passaggi.
+          </p>
+        </div>
+        {Object.keys(CASES).map((k) => (
+          <button key={k} onClick={() => chooseCase(k)}
+            style={{ ...btnPrimary(CASES[k].color), width: '100%', marginBottom: 10, textAlign: 'left' }}>
+            {CASES[k].icon}  {CASES[k].label}
+          </button>
+        ))}
+        <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
+      </div>
+    );
+  }
+
+  const current = CASES[caseKey];
+
+  if (phase === 'input') {
+    return (
+      <div>
+        <div style={card}>
+          <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: current.color, marginBottom: 10 }}>{current.label}</div>
+          <p style={{ fontSize: baseFont * 0.85, color: '#6b6b6b', marginBottom: 10 }}>{current.intro}</p>
+          <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder={current.placeholder} rows={6}
+            style={{ width: '100%', fontSize: baseFont * 0.92, lineHeight: 1.5, padding: '12px 14px', borderRadius: 10, border: '1.5px solid #d8d2bf', fontFamily: 'inherit', boxSizing: 'border-box', resize: 'vertical', marginBottom: 0 }} />
+        </div>
+        <button onClick={analyze} style={{ ...btnPrimary(current.color), width: '100%', marginBottom: 12 }}>Controlla i segnali automatici</button>
+        <button onClick={restart} style={btnSecondary}>&#8592; Scegli un altro caso</button>
+      </div>
+    );
+  }
+
+  if (phase === 'flags') {
+    return (
+      <div>
+        <div style={{ ...card, background: '#FEF6E2', borderColor: current.color }}>
+          <div style={{ fontSize: 12.5, fontWeight: 800, color: '#8a6d00', marginBottom: 10 }}>SEGNALI AUTOMATICI</div>
+          {flags.map((f, i) => (
+            <p key={i} style={{ fontSize: baseFont * 0.88, color: '#17203A', lineHeight: 1.5, margin: '0 0 10px 0' }}>&#9888;&#65039; {f}</p>
+          ))}
+        </div>
+        <p style={{ fontSize: baseFont * 0.78, color: '#6b6b6b', marginBottom: 14, lineHeight: 1.4 }}>
+          Questi segnali sono solo indizi testuali, non un giudizio di verità. Il controllo vero — aprire le fonti, verificarle davvero — resta nelle sei Tappe che seguono.
+        </p>
+        <button onClick={() => setPhase('steps')} style={{ ...btnPrimary(current.color), width: '100%', marginBottom: 12 }}>Continua con le sei Tappe</button>
+        <button onClick={restart} style={btnSecondary}>&#8592; Scegli un altro caso</button>
+      </div>
+    );
+  }
+
+  if (phase === 'steps') {
+    const step = current.steps[stepIndex];
+    return (
+      <div>
+        <div style={{ fontSize: 13, color: '#6b6b6b', fontWeight: 600, marginBottom: 10 }}>TAPPA {stepIndex + 1} DI 6 — {current.label}</div>
+        <div style={{ ...card, background: '#EAF1FC', borderColor: current.color }}>
+          <p style={{ fontSize: baseFont * 0.95, fontWeight: 700, color: '#17203A', margin: '0 0 10px 0', lineHeight: 1.5 }}>{step.q}</p>
+          <p style={{ fontSize: baseFont * 0.82, color: '#5b5b5b', margin: 0, lineHeight: 1.5, fontStyle: 'italic' }}>{step.example}</p>
+        </div>
+        <label style={{ display: 'block', fontSize: baseFont * 0.88, fontWeight: 700, marginBottom: 8, color: '#17203A' }}>La tua risposta, per questo caso:</label>
+        <textarea value={answers[stepIndex]} onChange={(e) => updateAnswer(e.target.value)} placeholder={step.placeholder} rows={4}
+          style={{ ...inputStyle, resize: 'vertical' }} />
+        <div style={{ display: 'flex', justifyContent: 'space-between', gap: 12, marginTop: 8 }}>
+          <button onClick={goBack} style={btnSecondary}>&#8592; Indietro</button>
+          <button onClick={goNext} style={btnPrimary(current.color)}>{stepIndex < 5 ? 'Avanti →' : 'Vedi il riepilogo'}</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div style={card}>
+        <div style={{ fontSize: baseFont * 0.95, fontWeight: 800, color: current.color, marginBottom: 10 }}>Riepilogo — {current.label}</div>
+        {current.steps.map((step, i) => (
+          <div key={i} style={{ marginBottom: 14 }}>
+            <div style={{ fontSize: baseFont * 0.82, fontWeight: 700, color: '#17203A', marginBottom: 4 }}>{i + 1}. {step.q}</div>
+            <div style={{ fontSize: baseFont * 0.82, color: answers[i] ? '#2b2b2b' : '#a39a82', lineHeight: 1.5, fontStyle: answers[i] ? 'normal' : 'italic' }}>
+              {answers[i] || '(non compilato)'}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p style={{ fontSize: baseFont * 0.8, color: '#6b6b6b', marginBottom: 20, lineHeight: 1.5 }}>
+        La sicurezza con cui qualcosa è detto non misura quanto sia vero. Misura solo quanto è stato detto con sicurezza.
+      </p>
+      <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+        <button onClick={restart} style={btnPrimary('#17203A')}>Controlla un altro caso</button>
+        <button onClick={onExit} style={btnSecondary}>&#8592; Torna agli strumenti</button>
+      </div>
+    </div>
+  );
+}
 // ==================== COMPONENTE APP ====================
 const STEPS = [
   {
@@ -3670,6 +3860,7 @@ function MetodoDellaDomandaApp() {
       'time-mapping': <TimeMappingTool baseFont={baseFont} onExit={exit} />,
       'mappa-perdita': <LossMapTool baseFont={baseFont} onExit={exit} />,
       'safety-plan': <SafetyPlanTool baseFont={baseFont} onExit={exit} />,
+      verifica-attendibilita': <VerificaAttendibilitaTool baseFont={baseFont} onExit={exit} />
     };
     const toolMeta = TOOLS_LIST.find((t) => t.key === key);
     return (
