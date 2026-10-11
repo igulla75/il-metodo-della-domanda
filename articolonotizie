@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il Metodo della Domanda per notizie e voto — Ilaria Gullà</title>
+<meta name="description" content="Come applicare il Metodo della Domanda a notizie, campagne elettorali e risposte di un'intelligenza artificiale.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f3e7cc;
+    --navy: #13264a;
+    --navy-soft: #3c4f72;
+    --gold: #9e8249;
+    --gold-soft: #e3d3ab;
+    --card: #fbf6e9;
+    --line: #ddceaa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; }
+  img { max-width: 100%; }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding-inline: 24px; padding-block: 48px 64px; }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--gold);
+    text-decoration: none; margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.14em; font-weight: 600;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(28px, 5vw, 42px); line-height: 1.1; margin: 0 0 24px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(21px, 3vw, 26px); line-height: 1.2; margin: 44px 0 14px;
+    color: var(--navy);
+  }
+  h3 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-style: italic;
+    font-size: clamp(18px, 2.4vw, 21px); line-height: 1.25; margin: 34px 0 10px;
+    color: var(--navy-soft);
+  }
+  p { font-size: 16px; line-height: 1.7; color: #2b2b2b; margin: 0 0 16px; }
+  li { font-size: 16px; line-height: 1.6; color: #2b2b2b; margin-bottom: 8px; }
+  ul, ol { padding-left: 22px; margin: 0 0 16px; }
+  strong { color: var(--navy); }
+  em { color: var(--navy-soft); }
+
+  .scenario {
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; font-style: italic; color: var(--navy-soft);
+    font-size: 15px; line-height: 1.6;
+  }
+
+  .table-wrap { overflow-x: auto; margin: 18px 0 28px; border-radius: 10px; border: 1.5px solid var(--line); }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--card); }
+  th, td { text-align: left; padding: 12px 14px; font-size: 14px; line-height: 1.5; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy); color: var(--cream); font-weight: 700; font-size: 12.5px; letter-spacing: 0.02em; }
+  td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  .source-note {
+    font-size: 13px; color: var(--navy-soft); margin-top: -8px;
+  }
+
+  footer {
+    margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;
+  }
+  .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+    color: var(--navy-soft); max-width: 520px;
+  }
+  .foot-author { font-size: 13px; color: var(--gold); margin-top: 10px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="back-link" href="libro.html">&#8592; Torna al libro</a>
+
+  <div class="eyebrow">Il Metodo della Domanda</div>
+  <h1>Il Metodo della Domanda per districarci da tutte le informazioni che ci travolgono</h1>
+  <p><em>Come riconoscere informazioni attendibili — in TV, sui giornali, online e nelle risposte di un'IA. Come distinguersi nella marea di informazioni per conoscere realmente il mondo in cui viviamo e riuscire a fare scelte migliori.</em></p>
+
+  <p>Ogni giorno arrivano decine di informazioni — da un telegiornale, da un giornale, da un post condiviso, da una ricerca online, da una risposta di un'intelligenza artificiale — e quasi sempre le trattiamo tutte allo stesso modo: le crediamo, le scartiamo, o le dimentichiamo in base a quanto ci convincono d'istinto, non in base a quanto sono verificabili. Proviamo ad applicare il Metodo della Domanda non a un tema specifico, ma allo strumento che usiamo per valutare qualsiasi tema: come distinguere un'informazione attendibile da una che non lo è, prima ancora di decidere cosa pensarne — e prima di usarla per effettuare qualsiasi scelta.</p>
+
+  <p>Il buon senso non basta, perché il buon senso tende a fidarsi di ciò che conferma quello che già pensiamo (la stessa trappola descritta nella Tappa 3 del libro, "Verificare, non confermare") e a diffidare, per principio, di ciò che lo contraddice. Serve un metodo, applicabile nel momento stesso in cui l'informazione arriva, non il giorno dopo quando potrebbe essere troppo tardi.</p>
+
+  <h2>Fatto, interpretazione, opinione</h2>
+
+  <p>La prima Tappa del Metodo della Domanda chiede: sto osservando i fatti, o sto già osservando una storia? Applicata a una notizia, questa domanda si scompone in tre livelli che quasi mai vengono distinti con chiarezza:</p>
+
+  <ul>
+    <li><strong>Il fatto</strong>: ciò che è accaduto, verificabile da più fonti indipendenti — una data, un numero, una dichiarazione effettivamente pronunciata, un documento pubblico.</li>
+    <li><strong>L'interpretazione</strong>: una spiegazione plausibile del fatto, ma non l'unica possibile — perché una cosa è accaduta, quali ne sono le cause, cosa significa per il futuro.</li>
+    <li><strong>L'opinione</strong>: un giudizio di valore su quel fatto — se sia giusto o sbagliato, buono o cattivo — che nessuna quantità di verifica può trasformare in un fatto.</li>
+  </ul>
+
+  <p>Un esercizio concreto: leggendo un articolo o guardando un servizio del telegiornale, provare a sottolineare mentalmente (o fisicamente, se il testo lo permette) ogni frase con tre colori diversi se si tratta di un fatto, un'interpretazione o un'opinione. Un articolo che mescola i tre livelli senza segnalarlo — presentando un'opinione con il tono di un fatto, o un'interpretazione come se fosse l'unica possibile — merita più cautela di uno che li separa con chiarezza, indipendentemente da quale posizione sostenga.</p>
+
+  <h2>Verificare una fonte</h2>
+
+  <p>La Tappa 3 del libro — "Ho davvero verificato, o ho solo cercato conferme?" — dà uno strumento preciso anche per le fonti di una notizia, non solo per le ipotesi personali. Prima di accettare un'informazione, vale la pena chiedersi:</p>
+
+  <ul>
+    <li><strong>Chi la scrive o la racconta?</strong> Un nome, una testata, un canale identificabile, oppure un profilo anonimo o una pagina senza responsabili dichiarati?</li>
+    <li><strong>Con quale mandato?</strong> Un giornalista legato a un codice deontologico e a una redazione verificabile, un'istituzione con un ruolo definito, o una persona che parla solo a titolo personale?</li>
+    <li><strong>Con quali interessi?</strong> Chi racconta questa notizia ha qualcosa da vendere, da difendere, da far eleggere? Avere un interesse non rende automaticamente falsa un'informazione, ma cambia quanto peso darle senza una seconda fonte.</li>
+    <li><strong>È verificabile altrove?</strong> Se la stessa notizia, con i medesimi fatti essenziali, compare anche su fonti indipendenti tra loro (che non si copiano a vicenda), la fiducia aumenta. Se esiste solo in un unico luogo, la cautela deve aumentare di pari misura.</li>
+  </ul>
+
+  <p>Questo non significa fidarsi solo delle fonti "ufficiali": significa applicare lo stesso controllo a tutte, comprese quelle che sembrano confermare ciò che già pensiamo.</p>
+
+  <h2>Perché la disinformazione viaggia più veloce della correzione</h2>
+
+  <p>Uno studio pubblicato su <em>Science</em> nel 2018 da Soroush Vosoughi, Deb Roy e Sinan Aral (MIT) ha analizzato circa 126.000 notizie diffuse su Twitter in oltre dieci anni, verificate da sei organizzazioni indipendenti di fact-checking: le notizie false raggiungevano un numero di persone maggiore, più in profondità e più velocemente delle notizie vere, in ogni categoria analizzata — politica compresa, dove l'effetto era più marcato. La causa principale era il comportamento umano: le notizie false tendevano a essere più nuove, più sorprendenti, capaci di generare reazioni emotive più intense, e per questo più condivise.</p>
+
+  <p>Questo spiega perché una correzione pubblicata il giorno dopo raramente raggiunge le stesse persone che avevano visto la notizia originale: chi corregge parte sempre in ritardo e con meno risonanza emotiva. La conseguenza pratica, in linea con la Tappa 4 del libro ("Accettare il limite"): è più efficiente sospendere il giudizio su una notizia sorprendente e non ancora confermata, piuttosto che condividerla subito e sperare di correggere in seguito, se risultasse falsa.</p>
+
+  <h2>Lo stesso scetticismo, anche con un'intelligenza artificiale</h2>
+
+  <p>Un'intelligenza artificiale come quella con la cui collaborazione questo metodo è stato scritto non è una fonte neutra per definizione, ed è bene trattarla come si farebbe con un giornale o un sito: può sbagliare un dato, confondere una fonte con un'altra, o dare una risposta sicura su qualcosa che in realtà non conosce con certezza (un fenomeno che nel settore si chiama spesso "confabulazione"). Un'unica ricerca veloce, fatta da un'IA o da una persona, può perdere informazioni importanti o fonti più recenti.</p>
+
+  <p>Alcune accortezze concrete, in linea con la Tappa 3 del libro:</p>
+
+  <ul>
+    <li>Chiedere sempre la fonte di un'affermazione importante, non accontentarsi della risposta da sola.</li>
+    <li>Verificare un fatto rilevante (una data, un numero, una citazione) con almeno un'altra fonte indipendente, specialmente prima di una decisione che conta.</li>
+    <li>Diffidare di una risposta troppo sicura su un argomento controverso o recente: la sicurezza del tono non è una garanzia di accuratezza.</li>
+    <li>Ricordare che un'IA può non avere informazioni aggiornate all'oggi, e che questo limite va dichiarato, non nascosto.</li>
+  </ul>
+
+  <p>Questa cautela non è un giudizio speciale riservato alle macchine: è lo stesso standard che il Metodo della Domanda chiede di applicare a qualsiasi fonte, umana o artificiale.</p>
+
+  <h2>Applicare il metodo al voto</h2>
+
+  <p>Tutto quanto detto fin qui converge nel momento in cui un'informazione diventa parte di una decisione importante — come un voto politico. Applicato a una scelta elettorale, il Metodo della Domanda si traduce in sei passaggi concreti:</p>
+
+  <ol>
+    <li><strong>Osservare</strong>: separare ciò che un candidato o un partito ha effettivamente fatto o dichiarato, con fonti verificabili, da ciò che la sua comunicazione (o quella dei suoi oppositori) racconta di lui.</li>
+    <li><strong>La domanda giusta</strong>: individuare le due o tre questioni che contano davvero per chi vota in quel momento, invece di farsi guidare da una domanda vaga come "chi mi convince di più".</li>
+    <li><strong>Verificare, non confermare</strong>: leggere anche le fonti vicine alla fazione che non si voterebbe, e chiedersi se le proprie obiezioni resistono a un confronto serio o sono soprattutto stereotipi assorbiti dal proprio ambiente.</li>
+    <li><strong>Accettare il limite</strong>: ammettere che nessun voto si basa su certezza piena su come si governerà in futuro, solo su come ci si è comportati finora.</li>
+    <li><strong>Aggiornare la mappa</strong>: restare disposti a cambiare voto da un'elezione all'altra se i fatti lo richiedono, invece di difendere la scelta passata per fedeltà a se stessi.</li>
+    <li><strong>Ascoltare</strong>: capire per intero le ragioni di chi vota diversamente, non per cambiare idea per forza, ma perché quelle ragioni dicono qualcosa di vero sul proprio paese che la propria parte, da sola, non può dire.</li>
+  </ol>
+
+  <p>Il metodo non promette di rendere il voto facile. Promette solo che la scelta si baserà su ciò che si è davvero verificato, non su ciò che qualcuno ha raccontato di aver verificato.</p>
+
+  <h2>Un esempio applicato: notizia, campagna elettorale, risposta dell'IA</h2>
+
+  <p>Le sei Tappe non cambiano da un caso all'altro. Cambia solo cosa, in ciascuna, bisogna guardare. Ecco lo stesso schema applicato a tre situazioni diverse.</p>
+
+  <h3>Caso 1 — Una notizia non verificata</h3>
+  <div class="scenario">Scenario: su un social network circola un post — "Crollo di un ponte nella notte, decine di feriti" — condiviso da centinaia di account, senza una fonte citata.</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Tappa</th><th>Domanda chiave</th><th>Applicazione al caso</th></tr>
+    <tr><td>1. Osservare</td><td>Sto osservando i fatti, o già una storia?</td><td>Il fatto osservabile è "un post con questo testo circola online". Il crollo stesso non è un fatto, finché non è confermato da una fonte indipendente.</td></tr>
+    <tr><td>2. Classificare</td><td>Sintomo, causa o problema — cosa ho davvero davanti?</td><td>Il post è un sintomo (la voglia di condividere, l'ansia collettiva). Il problema reale è se l'evento sia accaduto o no.</td></tr>
+    <tr><td>3. Verificare</td><td>Ho davvero verificato, o ho solo cercato conferme?</td><td>Cercare la notizia su almeno due fonti giornalistiche indipendenti o un comunicato ufficiale; controllare la foto con una ricerca per immagini (potrebbe essere vecchia o di un altro luogo).</td></tr>
+    <tr><td>4. Approfondire</td><td>Quanto devo ancora cercare, prima di decidere?</td><td>Se nessuna fonte affidabile conferma l'evento entro un tempo ragionevole, astenersi dal condividere e aspettare.</td></tr>
+    <tr><td>5. Correggere</td><td>Sto correggendo la mappa, o la sto solo difendendo?</td><td>Se la ricerca per immagini mostra che la foto è vecchia, accettarlo anche se il post è già stato condiviso.</td></tr>
+    <tr><td>6. Ascoltare</td><td>Sto ascoltando, o sto solo aspettando il mio turno per parlare?</td><td>Leggere anche chi dice "è una bufala" senza liquidarlo subito — e verificare a sua volta le sue fonti.</td></tr>
+  </table>
+  </div>
+
+  <h3>Caso 2 — Uno spot di campagna elettorale</h3>
+  <div class="scenario">Scenario: uno spot promette — "Con la nostra riforma, la disoccupazione scenderà del 50% in un anno."</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Tappa</th><th>Domanda chiave</th><th>Applicazione al caso</th></tr>
+    <tr><td>1. Osservare</td><td>Sto osservando i fatti, o già una storia?</td><td>Il fatto osservabile è che il candidato ha pronunciato questa promessa. Il "-50%" è una previsione, non un fatto già accaduto.</td></tr>
+    <tr><td>2. Classificare</td><td>Sintomo, causa o problema — cosa ho davvero davanti?</td><td>Il problema (la disoccupazione) è reale. La riforma proposta è un'ipotesi di soluzione, non ancora una causa verificata.</td></tr>
+    <tr><td>3. Verificare</td><td>Ho davvero verificato, o ho solo cercato conferme?</td><td>Leggere il testo della riforma, non solo lo spot; cercare dati di istituti statistici indipendenti su misure simili già applicate altrove.</td></tr>
+    <tr><td>4. Approfondire</td><td>Quanto devo ancora cercare, prima di decidere?</td><td>Confrontare almeno due fonti di segno opposto — una favorevole e una critica alla misura — prima di valutarla credibile o no.</td></tr>
+    <tr><td>5. Correggere</td><td>Sto correggendo la mappa, o la sto solo difendendo?</td><td>Se i dati storici mostrano che misure simili non hanno mai raggiunto quel risultato, aggiornare la propria valutazione — anche verso un partito che si sostiene.</td></tr>
+    <tr><td>6. Ascoltare</td><td>Sto ascoltando, o sto solo aspettando il mio turno per parlare?</td><td>Ascoltare l'argomentazione tecnica di chi sostiene la riforma, cercando il merito, non solo la cornice politica.</td></tr>
+  </table>
+  </div>
+
+  <h3>Caso 3 — Una risposta di un'intelligenza artificiale</h3>
+  <div class="scenario">Scenario: si chiede a un chatbot "Quali sono le conseguenze economiche della riforma X?" e il chatbot risponde con cifre precise, senza citare fonti.</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Tappa</th><th>Domanda chiave</th><th>Applicazione al caso</th></tr>
+    <tr><td>1. Osservare</td><td>Sto osservando i fatti, o già una storia?</td><td>Il fatto osservabile è che il chatbot ha generato quel testo. Le cifre non diventano un fatto verificato solo perché espresse con sicurezza.</td></tr>
+    <tr><td>2. Classificare</td><td>Sintomo, causa o problema — cosa ho davvero davanti?</td><td>Una risposta sicura e dettagliata è un sintomo di come il modello genera testo plausibile — non necessariamente un segno di accuratezza.</td></tr>
+    <tr><td>3. Verificare</td><td>Ho davvero verificato, o ho solo cercato conferme?</td><td>Chiedere al chatbot le sue fonti, poi verificarle una per una: esistono davvero? Dicono davvero quello? Senza fonti verificabili, trattare la risposta come ipotesi, non come conclusione.</td></tr>
+    <tr><td>4. Approfondire</td><td>Quanto devo ancora cercare, prima di decidere?</td><td>Non accontentarsi di una sola richiesta di chiarimento: incrociare con almeno una fonte umana indipendente, giornalistica o istituzionale.</td></tr>
+    <tr><td>5. Correggere</td><td>Sto correggendo la mappa, o la sto solo difendendo?</td><td>Se le fonti citate dal chatbot risultano inesistenti o travisate, scartare la risposta — anche se era formulata in modo convincente.</td></tr>
+    <tr><td>6. Ascoltare</td><td>Sto ascoltando, o sto solo aspettando il mio turno per parlare?</td><td>Non trattare il disaccordo tra due risposte (due IA, o un'IA e una fonte umana) come un errore da ignorare, ma come un segnale da approfondire.</td></tr>
+  </table>
+  </div>
+
+  <h3>Cosa hanno in comune i tre casi</h3>
+  <p>In nessuno dei tre la sicurezza con cui qualcosa viene detto — un titolo d'impatto, uno slogan, una risposta fluente — misura quanto sia vero. Misura solo quanto è stato detto con sicurezza. Le sei Tappe servono esattamente a separare le due cose.</p>
+
+  <h2>Conclusione</h2>
+
+  <p>Nessuno può verificare ogni notizia che riceve, ogni giorno, su ogni argomento: sarebbe impossibile, e non è questo che il Metodo della Domanda chiede. Chiede qualcosa di più realistico: applicare questo scetticismo metodico quando conta davvero — prima di condividere qualcosa che potrebbe essere falso, prima di accettare qualunque risposta, prima di votare.</p>
+
+  <p>Distinguere fatti da opinioni, controllare chi parla e con quale interesse, sapere che il falso viaggia più veloce del vero, trattare un'intelligenza artificiale con grande cautela: sono piccoli gesti, ripetibili, che non richiedono competenze speciali. Richiedono solo la disponibilità a fermarsi un momento prima di credere — o di condividere — ed è esattamente ciò che rende chiunque più libero di pensare con la propria testa, invece che con quella di chi ha raccontato la notizia per primo.</p>
+
+  <footer>
+    <div class="quote">"Una mappa non deve essere perfetta per essere utile — deve solo essere un po' più vera di quella con cui sei partito."</div>
+    <div class="foot-author">Ilaria Gullà</div>
+  </footer>
+
+</div>
+</body>
+</html>
