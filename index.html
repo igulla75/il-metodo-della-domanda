@@ -1225,7 +1225,7 @@ const TOOLS_LIST = [
   { key: 'cnv', title: 'Comunicazione Nonviolenta', subtitle: 'Osservazione, sentimento, bisogno, richiesta', color: '#C2185B', icon: '\u{1F4AC}' , itinerari: [6, 20] },
   { key: 'colora-respira', title: 'Colora e respira', subtitle: 'Uno schema strutturato, un ritmo lento', color: '#6B4FA0', icon: '\u{1F3A8}' , itinerari: [] },
   { key: 'eccitazione', title: 'Dall\u2019ansia all\u2019eccitazione', subtitle: 'Prima di una prestazione, non calmarti: riformula', color: '#D4A017', icon: '\u26A1' , itinerari: [1] },
-  { key: 'verifica-attendibilita', title: 'Verificare prima di credere', subtitle: 'Notizie, voto, risposte di un’IA, esercizi — le sei Tappe applicate', color: '#17203A', icon: '🔍', itinerari: [] }
+  { key:  'safety-plan': <SafetyPlanTool baseFont={baseFont} onExit={exit} />, 'verifica-attendibilita': <VerificaAttendibilitaTool baseFont={baseFont} onExit={exit} />, };
 ];
 
 // ============ 1. RESPIRAZIONE GUIDATA ============
