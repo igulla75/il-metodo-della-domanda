@@ -3780,7 +3780,7 @@ function MetodoDellaDomandaApp() {
         </button>
       )}
       <div style={{ display: 'flex', gap: 8, alignItems: 'center', justifyContent: 'flex-end', marginBottom: 18 }}>
-        <span style={{ fontSize: 13, color: '#5b5b5b', marginRight: 4 }}>Testo</span>
+       <span style={{ fontSize: 13, color: '#5b5b5b', marginRight: 4 }}>Dimensione testo</span>
         <button onClick={() => setFontScale((f) => Math.max(0.85, +(f - 0.1).toFixed(2)))} aria-label="Riduci testo" style={ctrlBtnStyle}>A&#8211;</button>
         <button onClick={() => setFontScale((f) => Math.min(1.6, +(f + 0.1).toFixed(2)))} aria-label="Aumenta testo" style={ctrlBtnStyle}>A+</button>
       </div>
