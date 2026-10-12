@@ -3897,7 +3897,7 @@ function MetodoDellaDomandaApp() {
           </div>
           <button onClick={() => setScreen('soglia')} style={{ ...secondaryBtnStyle(baseFont), marginBottom: 16, borderColor: '#8B1E1E', color: '#8B1E1E' }}>Non riesco nemmeno a iniziare la giornata</button>
           <button onClick={() => setScreen('esami-lavoro')} style={{ ...secondaryBtnStyle(baseFont), marginBottom: 16, borderColor: '#6B4FA0', color: '#6B4FA0' }}>&#128218; Esami, colloqui, progetti di lavoro</button>
-          <button onClick={goNext} style={primaryBtnStyle('#1F4E8C', baseFont)}>Trova il tuo Itinerario</button>
+          <p style={{ fontSize: baseFont * 0.82, color: '#5b5b5b', maxWidth: 460, margin: '0 0 8px 0' }}>Se non sai da dove iniziare, comincia da qui:</p> <button onClick={goNext} style={primaryBtnStyle('#1F4E8C', baseFont)}>Trova il tuo Itinerario</button>
           <button onClick={openJourneyMap} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12 }}>&#127801; La tua Rosa dei Venti</button>
           <button onClick={() => setScreen('filosofia')} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12, borderColor: '#6B4FA0', color: '#6B4FA0' }}>&#128330; Perché domande, non risposte</button>
           <button onClick={() => setScreen('audiolibro')} style={{ ...secondaryBtnStyle(baseFont), marginTop: 12 }}>&#127911; Ascolta l'audiolibro</button>
