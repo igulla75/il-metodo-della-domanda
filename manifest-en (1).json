@@ -1,0 +1,21 @@
+{
+  "name": "The Method of the Question — Journey into the Dark",
+  "short_name": "Method of Question",
+  "description": "The 32 Itineraries of the book Journey into the Dark, walked through with the Method of the Question: observe, distinguish, question, verify, accept the limit, update, decide, resume the path.",
+  "start_url": "./index-en.html",
+  "scope": "./",
+  "id": "./index-en.html",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "orientation": "any",
+  "background_color": "#F7F3E9",
+  "theme_color": "#F7F3E9",
+  "lang": "en",
+  "dir": "ltr",
+  "icons": [
+    { "src": "favicon-48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
