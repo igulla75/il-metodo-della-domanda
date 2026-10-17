@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audiobook — Journey into the Dark</title>
+<meta name="description" content="Listen for free to the complete audiobook of Journey into the Dark — A Candle and a Compass, by Ilaria Gullà.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f3e7cc; --navy: #13264a; --navy-soft: #3c4f72;
+    --gold: #9e8249; --gold-soft: #e3d3ab; --card: #fbf6e9; --line: #ddceaa;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Inter',system-ui,sans-serif; background:var(--cream); color:var(--navy); }
+  a { text-decoration:none; }
+  .wrap { width:100%; max-width:760px; margin:0 auto; padding-inline:24px; padding-block:48px 64px; }
+  .eyebrow { font-size:13px; letter-spacing:.14em; font-weight:600; color:var(--gold); text-transform:uppercase; margin-bottom:14px; }
+  h1 { font-family:'Fraunces',serif; font-weight:600; font-size:clamp(28px,5vw,42px); line-height:1.1; margin:0 0 10px; }
+  .lead { font-size:15px; line-height:1.6; color:var(--navy-soft); margin:0 0 8px; max-width:560px; }
+  .note { font-size:13px; line-height:1.6; color:var(--navy-soft); background:var(--card); border:1px solid var(--line);
+           border-radius:8px; padding:14px 16px; margin:20px 0 36px; }
+  .back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--gold); margin-bottom:28px; }
+  .cover { display:block; width:160px; max-width:40%; border-radius:6px; box-shadow:0 10px 24px rgba(19,38,74,.25); margin:0 0 28px; }
+  h2.section { font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:40px 0 14px; color:var(--navy);
+                border-top:1px solid var(--line); padding-top:28px; }
+  .tracks { display:flex; flex-direction:column; gap:10px; }
+  .track { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px 16px;
+            display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; }
+  .track-title { font-size:14px; font-weight:600; flex:1 1 220px; min-width:180px; }
+  .track-meta { font-size:12px; color:var(--navy-soft); flex-basis:100%; margin-top:-4px; }
+  audio { flex:1 1 260px; min-width:220px; max-width:100%; height:32px; }
+  .dl { font-size:12px; font-weight:700; color:var(--navy); background:var(--gold-soft); border-radius:5px;
+         padding:6px 10px; white-space:nowrap; }
+  footer { margin-top:48px; padding-top:24px; border-top:1px solid var(--line); text-align:center; }
+  .quote { font-family:'Fraunces',serif; font-style:italic; font-size:14px; color:var(--navy-soft); max-width:520px; margin:0 auto; }
+  .foot-author { font-size:13px; color:var(--gold); margin-top:12px; font-weight:600; }
+  @media (max-width:480px) { .track { flex-direction:column; align-items:stretch; } audio { width:100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index-en.html">← Back to the app</a>
+  <div class="eyebrow">Free &middot; complete edition</div>
+  <h1>Audiobook — Journey into the Dark</h1>
+  <p class="lead">The full narration of the book, read aloud in one continuous recording — about 8 hours and 20 minutes — streamable or downloadable. No app to install.</p>
+  <div class="note">The story runs without interruption from beginning to end. This recording is also meant for anyone who finds listening easier than reading, including people with learning differences.</div>
+
+  <h2 class="section">Listen</h2>
+  <div class="tracks">
+      <div class="track">
+        <div class="track-title">Listen to the audiobook</div>
+        <div class="track-meta">Full recording · ≈ 8h 20m</div>
+        <audio controls preload="none" src="https://archive.org/download/journey-into-the-dark-audiobook-clean/Journey_into_the_Dark_audiobook_CLEAN.mp3"></audio>
+        <a class="dl" href="https://archive.org/download/journey-into-the-dark-audiobook-clean/Journey_into_the_Dark_audiobook_CLEAN.mp3">Download ↓</a>
+      </div>
+  </div>
+
+  <footer>
+    <div class="quote">&ldquo;A map doesn&rsquo;t have to be perfect to be useful &mdash; it only has to be a little truer than the one you set out with.&rdquo;</div>
+    <div class="foot-author">Ilaria Gullà</div>
+  </footer>
+</div>
+</body>
+</html>
