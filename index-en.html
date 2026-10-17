@@ -3542,6 +3542,25 @@ const ATLAS_TABS = [
 
 function CompassProgress({ activeIndex, size = 108 }) {
   const center = size / 2;
+  const radius = size / 2 - 10;
+  return (
+    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
+      <circle cx={center} cy={center} r={radius} fill="none" stroke="#E3DCC9" strokeWidth="2" />
+      {STEPS.map((s, i) => {
+        const angle = (i / TOTAL) * 2 * Math.PI - Math.PI / 2;
+        const x = center + radius * Math.cos(angle);
+        const y = center + radius * Math.sin(angle);
+        const done = i <= activeIndex;
+        return (
+          <circle key={s.key} cx={x} cy={y} r={done ? 7 : 5} fill={done ? s.color : '#E3DCC9'}
+            stroke="#FBF6EE" strokeWidth="2" style={{ transition: 'all 0.4s ease' }} />
+        );
+      })}
+      <circle cx={center} cy={center} r={4} fill="#17203A" />
+    </svg>
+  );
+}
+
 // ============ PERSONAL COMPASS ROSE — aggregated map of the path so far ============
 function PersonalCompass({ counts, maxCount, size = 260 }) {
   const center = size / 2;
@@ -3872,7 +3891,6 @@ function MetodoDellaDomandaApp() {
         </div>
       </div></div>
     );
-  }
   }
 
   if (screen === 'esami-lavoro') {
