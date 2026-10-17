@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Method of the Question for news and voting — Ilaria Gullà</title>
+<meta name="description" content="How to apply the Method of the Question to news, election campaigns and the answers given by an AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f3e7cc;
+    --navy: #13264a;
+    --navy-soft: #3c4f72;
+    --gold: #9e8249;
+    --gold-soft: #e3d3ab;
+    --card: #fbf6e9;
+    --line: #ddceaa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+  }
+  a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 2px; }
+  img { max-width: 100%; }
+  .wrap { width: 100%; max-width: 760px; margin: 0 auto; padding-inline: 24px; padding-block: 48px 64px; }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--gold);
+    text-decoration: none; margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-size: 13px; letter-spacing: 0.14em; font-weight: 600;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(28px, 5vw, 42px); line-height: 1.1; margin: 0 0 24px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(21px, 3vw, 26px); line-height: 1.2; margin: 44px 0 14px;
+    color: var(--navy);
+  }
+  h3 {
+    font-family: 'Fraunces', serif; font-weight: 600; font-style: italic;
+    font-size: clamp(18px, 2.4vw, 21px); line-height: 1.25; margin: 34px 0 10px;
+    color: var(--navy-soft);
+  }
+  p { font-size: 16px; line-height: 1.7; color: #2b2b2b; margin: 0 0 16px; }
+  li { font-size: 16px; line-height: 1.6; color: #2b2b2b; margin-bottom: 8px; }
+  ul, ol { padding-left: 22px; margin: 0 0 16px; }
+  strong { color: var(--navy); }
+  em { color: var(--navy-soft); }
+
+  .scenario {
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 10px;
+    padding: 16px 20px; margin: 18px 0; font-style: italic; color: var(--navy-soft);
+    font-size: 15px; line-height: 1.6;
+  }
+
+  .table-wrap { overflow-x: auto; margin: 18px 0 28px; border-radius: 10px; border: 1.5px solid var(--line); }
+  table { border-collapse: collapse; width: 100%; min-width: 560px; background: var(--card); }
+  th, td { text-align: left; padding: 12px 14px; font-size: 14px; line-height: 1.5; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: var(--navy); color: var(--cream); font-weight: 700; font-size: 12.5px; letter-spacing: 0.02em; }
+  td:first-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+
+  .source-note {
+    font-size: 13px; color: var(--navy-soft); margin-top: -8px;
+  }
+
+  footer {
+    margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line);
+    display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;
+  }
+  .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-size: 15px;
+    color: var(--navy-soft); max-width: 520px;
+  }
+  .foot-author { font-size: 13px; color: var(--gold); margin-top: 10px; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="back-link" href="index-en.html">&#8592; Back to the app</a>
+
+  <div class="eyebrow">The Method of the Question</div>
+  <h1>The Method of the Question for finding your way through the flood of information</h1>
+  <p><em>How to recognise reliable information — on TV, in the papers, online and in an AI's answers. How to stand apart in the tide of information, to really understand the world we live in and make better choices.</em></p>
+
+  <p>Dozens of pieces of information reach us every day — from a news broadcast, a newspaper, a shared post, an online search, an answer from an artificial intelligence — and we almost always treat them all the same way: we believe them, dismiss them, or forget them based on how convincing they feel instinctively, not on how verifiable they are. Let's try applying the Method of the Question not to one specific topic, but to the very tool we use to evaluate any topic: how to tell reliable information apart from unreliable information, before even deciding what to think of it — and before using it to make any choice.</p>
+
+  <p>Common sense isn't enough, because common sense tends to trust what already confirms what we think (the same trap described in Stage 3 of the book, "Verify, don't confirm") and to distrust, on principle, whatever contradicts it. What's needed is a method, applicable the moment the information arrives, not the day after, when it might already be too late.</p>
+
+  <h2>Fact, interpretation, opinion</h2>
+
+  <p>The first Stage of the Method of the Question asks: am I observing the facts, or am I already observing a story? Applied to a piece of news, this question breaks down into three levels that are almost never clearly told apart:</p>
+
+  <ul>
+    <li><strong>The fact</strong>: what happened, verifiable from several independent sources — a date, a number, a statement actually made, a public document.</li>
+    <li><strong>The interpretation</strong>: a plausible explanation of the fact, but not the only possible one — why something happened, what its causes are, what it means for the future.</li>
+    <li><strong>The opinion</strong>: a value judgment on that fact — whether it's right or wrong, good or bad — which no amount of verification can turn into a fact.</li>
+  </ul>
+
+  <p>A concrete exercise: while reading an article or watching a news segment, try mentally underlining (or physically, if the text allows it) each sentence with three different colours depending on whether it's a fact, an interpretation, or an opinion. An article that mixes the three levels without flagging it — presenting an opinion in the tone of a fact, or an interpretation as if it were the only possible one — deserves more caution than one that keeps them clearly separate, whatever position it argues for.</p>
+
+  <h2>Checking a source</h2>
+
+  <p>Stage 3 of the book — "Have I really verified this, or have I only looked for confirmation?" — also gives a precise tool for checking a news source, not only a personal hypothesis. Before accepting a piece of information, it's worth asking:</p>
+
+  <ul>
+    <li><strong>Who is writing or reporting it?</strong> A name, an outlet, an identifiable channel, or an anonymous profile or a page with no stated person responsible?</li>
+    <li><strong>With what mandate?</strong> A journalist bound by a code of ethics and a verifiable editorial outlet, an institution with a defined role, or someone speaking only in a personal capacity?</li>
+    <li><strong>With what interests?</strong> Does whoever is reporting this have something to sell, to defend, to get elected? Having an interest doesn't automatically make a piece of information false, but it changes how much weight to give it without a second source.</li>
+    <li><strong>Can it be verified elsewhere?</strong> If the same news, with the same essential facts, also appears on sources that are independent of one another (not simply copying each other), trust increases. If it exists in only one place, caution should increase by the same measure.</li>
+  </ul>
+
+  <p>This doesn't mean trusting only "official" sources: it means applying the same scrutiny to all of them, including the ones that seem to confirm what we already think.</p>
+
+  <h2>Why disinformation travels faster than correction</h2>
+
+  <p>A study published in <em>Science</em> in 2018 by Soroush Vosoughi, Deb Roy and Sinan Aral (MIT) analysed roughly 126,000 news stories that spread on Twitter over more than ten years, verified by six independent fact-checking organisations: false news reached more people, more deeply and more quickly than true news, in every category analysed — politics included, where the effect was strongest. The main cause was human behaviour: false news tended to be more novel, more surprising, able to generate more intense emotional reactions, and was therefore shared more.</p>
+
+  <p>This explains why a correction published the next day rarely reaches the same people who saw the original story: whoever corrects it always starts late, and with less emotional resonance. The practical consequence, in line with Stage 4 of the book ("Accept the limit"): it is more efficient to suspend judgment on a surprising, not-yet-confirmed piece of news than to share it right away and hope to correct it later if it turns out to be false.</p>
+
+  <h2>The same scepticism, even with an artificial intelligence</h2>
+
+  <p>An artificial intelligence — such as the one with whose collaboration this method was written — is not a neutral source by definition, and it is wise to treat it the way you would a newspaper or a website: it can get a fact wrong, confuse one source with another, or give a confident answer about something it doesn't actually know for certain (a phenomenon often called "confabulation" in the field). A single quick search, whether done by an AI or a person, can miss important information or more recent sources.</p>
+
+  <p>A few concrete precautions, in line with Stage 3 of the book:</p>
+
+  <ul>
+    <li>Always ask for the source of an important claim, rather than settling for the answer alone.</li>
+    <li>Check a relevant fact (a date, a number, a quotation) against at least one other independent source, especially before a decision that matters.</li>
+    <li>Be wary of an answer that sounds too confident on a controversial or recent topic: confidence of tone is no guarantee of accuracy.</li>
+    <li>Remember that an AI may not have information up to date as of today, and that this limit should be stated, not hidden.</li>
+  </ul>
+
+  <p>This caution isn't a special judgment reserved for machines: it's the same standard the Method of the Question asks you to apply to any source, human or artificial.</p>
+
+  <h2>Applying the method to voting</h2>
+
+  <p>Everything said so far converges at the moment a piece of information becomes part of an important decision — such as a political vote. Applied to an electoral choice, the Method of the Question translates into six concrete steps:</p>
+
+  <ol>
+    <li><strong>Observe</strong>: separate what a candidate or a party has actually done or stated, with verifiable sources, from what their communication (or their opponents') says about them.</li>
+    <li><strong>The right question</strong>: identify the two or three issues that really matter to you as a voter right now, instead of being guided by a vague question like "who convinces me the most".</li>
+    <li><strong>Verify, don't confirm</strong>: also read sources close to the side you wouldn't vote for, and ask whether your own objections hold up to a serious comparison or are mostly stereotypes absorbed from your own circle.</li>
+    <li><strong>Accept the limit</strong>: acknowledge that no vote rests on full certainty about how someone will govern in the future, only on how they have behaved so far.</li>
+    <li><strong>Update the map</strong>: stay willing to change your vote from one election to the next if the facts call for it, instead of defending a past choice out of loyalty to yourself.</li>
+    <li><strong>Listen</strong>: fully understand the reasons of those who vote differently, not necessarily to change your mind, but because those reasons say something true about your country that your own side, alone, cannot say.</li>
+  </ol>
+
+  <p>The method doesn't promise to make voting easy. It only promises that the choice will rest on what has actually been verified, not on what someone claimed to have verified.</p>
+
+  <h2>A worked example: a news story, a campaign ad, an AI's answer</h2>
+
+  <p>The six Stages don't change from one case to another. What changes is only what, in each one, needs to be looked at. Here is the same framework applied to three different situations.</p>
+
+  <h3>Case 1 — An unverified news story</h3>
+  <div class="scenario">Scenario: a post is circulating on a social network — "Bridge collapses overnight, dozens injured" — shared by hundreds of accounts, with no source cited.</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Stage</th><th>Key question</th><th>Applied to the case</th></tr>
+    <tr><td>1. Observe</td><td>Am I observing the facts, or already a story?</td><td>The observable fact is "a post with this text is circulating online." The collapse itself is not a fact, until confirmed by an independent source.</td></tr>
+    <tr><td>2. Classify</td><td>Symptom, cause or problem — what am I really looking at?</td><td>The post is a symptom (the urge to share, collective anxiety). The real problem is whether the event happened at all.</td></tr>
+    <tr><td>3. Verify</td><td>Have I really verified this, or have I only looked for confirmation?</td><td>Look for the story on at least two independent news sources, or an official statement; check the photo with a reverse image search (it could be old or from a different location).</td></tr>
+    <tr><td>4. Go deeper</td><td>How much more do I need to look, before deciding?</td><td>If no reliable source confirms the event within a reasonable time, refrain from sharing it and wait.</td></tr>
+    <tr><td>5. Correct</td><td>Am I correcting the map, or just defending it?</td><td>If a reverse image search shows the photo is old, accept that, even if the post has already been shared.</td></tr>
+    <tr><td>6. Listen</td><td>Am I listening, or just waiting for my turn to speak?</td><td>Also read whoever says "this is fake" without dismissing them outright — and in turn check their sources too.</td></tr>
+  </table>
+  </div>
+
+  <h3>Case 2 — An election campaign ad</h3>
+  <div class="scenario">Scenario: a campaign ad promises — "With our reform, unemployment will drop by 50% within a year."</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Stage</th><th>Key question</th><th>Applied to the case</th></tr>
+    <tr><td>1. Observe</td><td>Am I observing the facts, or already a story?</td><td>The observable fact is that the candidate made this promise. The "-50%" is a prediction, not a fact that has already happened.</td></tr>
+    <tr><td>2. Classify</td><td>Symptom, cause or problem — what am I really looking at?</td><td>The problem (unemployment) is real. The proposed reform is a hypothesis for a solution, not yet a verified cause.</td></tr>
+    <tr><td>3. Verify</td><td>Have I really verified this, or have I only looked for confirmation?</td><td>Read the actual text of the reform, not just the ad; look for data from independent statistical institutes on similar measures already applied elsewhere.</td></tr>
+    <tr><td>4. Go deeper</td><td>How much more do I need to look, before deciding?</td><td>Compare at least two sources of opposing views — one favourable and one critical of the measure — before judging it credible or not.</td></tr>
+    <tr><td>5. Correct</td><td>Am I correcting the map, or just defending it?</td><td>If historical data shows that similar measures have never achieved that result, update your assessment — even toward a party you support.</td></tr>
+    <tr><td>6. Listen</td><td>Am I listening, or just waiting for my turn to speak?</td><td>Listen to the technical argument of whoever supports the reform, looking for its merits, not just its political framing.</td></tr>
+  </table>
+  </div>
+
+  <h3>Case 3 — An artificial intelligence's answer</h3>
+  <div class="scenario">Scenario: a chatbot is asked "What are the economic consequences of reform X?" and it answers with precise figures, citing no sources.</div>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Stage</th><th>Key question</th><th>Applied to the case</th></tr>
+    <tr><td>1. Observe</td><td>Am I observing the facts, or already a story?</td><td>The observable fact is that the chatbot generated that text. The figures don't become a verified fact just because they were stated with confidence.</td></tr>
+    <tr><td>2. Classify</td><td>Symptom, cause or problem — what am I really looking at?</td><td>A confident, detailed answer is a symptom of how the model generates plausible text — not necessarily a sign of accuracy.</td></tr>
+    <tr><td>3. Verify</td><td>Have I really verified this, or have I only looked for confirmation?</td><td>Ask the chatbot for its sources, then check each one: do they really exist? Do they really say that? Without verifiable sources, treat the answer as a hypothesis, not a conclusion.</td></tr>
+    <tr><td>4. Go deeper</td><td>How much more do I need to look, before deciding?</td><td>Don't settle for a single follow-up request: cross-check with at least one independent human source, journalistic or institutional.</td></tr>
+    <tr><td>5. Correct</td><td>Am I correcting the map, or just defending it?</td><td>If the sources cited by the chatbot turn out not to exist or to be misrepresented, discard the answer — even if it was phrased convincingly.</td></tr>
+    <tr><td>6. Listen</td><td>Am I listening, or just waiting for my turn to speak?</td><td>Don't treat a disagreement between two answers (two AIs, or an AI and a human source) as an error to ignore, but as a signal worth looking into further.</td></tr>
+  </table>
+  </div>
+
+  <h3>What the three cases have in common</h3>
+  <p>In none of the three does the confidence with which something is said — a striking headline, a slogan, a fluent answer — measure how true it is. It only measures how confidently it was said. The six Stages exist precisely to tell the two apart.</p>
+
+  <h2>Conclusion</h2>
+
+  <p>No one can verify every piece of news they receive, every day, on every topic: that would be impossible, and it isn't what the Method of the Question asks. It asks something more realistic: to apply this methodical scepticism when it really matters — before sharing something that might be false, before accepting any answer at face value, before voting.</p>
+
+  <p>Telling facts apart from opinions, checking who is speaking and with what interest, knowing that falsehood travels faster than truth, treating an artificial intelligence with great caution: these are small, repeatable gestures that require no special expertise. They only require the willingness to pause for a moment before believing — or sharing — something, and that is exactly what makes anyone freer to think with their own mind, instead of with the mind of whoever told the story first.</p>
+
+  <footer>
+    <div class="quote">"A map doesn't have to be perfect to be useful — it only has to be a little truer than the one you started with."</div>
+    <div class="foot-author">Ilaria Gullà</div>
+  </footer>
+
+</div>
+</body>
+</html>
