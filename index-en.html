@@ -1023,6 +1023,7 @@ const ORIENTATION_TABLES = {
   },
   9: {
     intro: 'Job hunting is still shaped by factors beyond your control, but there is also a real lever a single person can pull alone. Recognise the situation closest to your own.',
+    manifestations: [
       { manifestation: 'You feel disoriented, as well as worried about money', tool: 'Recognise that your job also provided structure, contacts, a purpose — not only income', origin: 'Marie Jahoda, the Marienthal study (1933)', why: 'Helps explain why the gap left behind is bigger than the economic problem alone.', toolKey: null },
       { manifestation: 'You’re only job-hunting through your closest circle', tool: 'Activate your weak ties too: former colleagues, distant acquaintances, occasional contacts', origin: 'Mark Granovetter — the strength of weak ties', why: 'Weak ties give access to information your close circle doesn’t have.', toolKey: null },
       { manifestation: 'You feel the urgency to act right now', tool: 'It’s natural to turn to your close circle first — but don’t stop there', origin: 'Granovetter, Getting a Job', why: 'People who find work only through strong ties stay unemployed longer, on average.', toolKey: null },
@@ -1180,46 +1181,46 @@ const btnSecondary = { background: 'transparent', color: '#5b5b5b', border: '1.5
 const inputStyle = { width: '100%', padding: '12px 14px', borderRadius: 10, border: '1.5px solid #d8d2bf', fontSize: 16, fontFamily: 'inherit', boxSizing: 'border-box', marginBottom: 12 };
 
 const TOOLS_LIST = [
-  { key: 'controllo-influenza', title: 'Circle of control and influence', subtitle: 'Telling what depends on you apart from what doesn’t', color: '#2F8F5B', icon: '\u{1F3AF}' , itineraries: [7, 8] },
-  { key: 'albero-metodo', title: 'What kind of problem is it?', subtitle: 'A guided path to choosing the right tool', color: '#1F4E8C', icon: '\u{1F333}' , itineraries: [6] },
-  { key: 'ipotesi-lab', title: 'Hypothesis lab', subtitle: 'Test an explanation against the evidence', color: '#C0392B', icon: '\u{1F52C}' , itineraries: [5] },
-  { key: 'gratitudine', title: 'Gratitude practice', subtitle: 'Three things, with specificity — not a generic list', color: '#D4A017', icon: '\u{1F31F}' , itineraries: [] },
-  { key: 'act-valori', title: 'Values and committed action', subtitle: 'What really matters, and one small step toward it', color: '#2F8F5B', icon: '\u{1F9ED}' , itineraries: [] },
-  { key: 'woop', title: 'Wish, obstacle, plan (WOOP)', subtitle: 'A goal made concrete, not just hoped for', color: '#1F4E8C', icon: '\u{1F5FA}️' , itineraries: [] },
-  { key: 'attivazione', title: 'Behavioural activation', subtitle: 'Small scheduled actions, even without the desire to', color: '#3F7FBF', icon: '\u{1F4C5}' , itineraries: [1, 9] },
-  { key: 'abc', title: 'ABC map', subtitle: 'What happens before, during, after', color: '#C0392B', icon: '\u{1F517}' , itineraries: [16] },
-  { key: 'scrittura-espressiva', title: 'Expressive writing', subtitle: 'Putting words to a difficult experience', color: '#6B4FA0', icon: '\u{1F4DD}' , itineraries: [] },
-  { key: 'self-compassion', title: 'Self-compassion pause', subtitle: 'Three steps, when self-judgment is harsh', color: '#C2185B', icon: '\u{1F49B}' , itineraries: [15] },
-  { key: 'mindful-eating', title: 'Hunger, or something else?', subtitle: 'A guided breathing pause, then three questions before deciding', color: '#D35400', icon: '\u{1F37D}️' , itineraries: [16] },
-  { key: 'mappa-convinzioni', title: 'Map of beliefs', subtitle: 'What I believed before, what I see now', color: '#1F4E8C', icon: '\u{1F5FA}️' , itineraries: [3] },
+  { key: 'controllo-influenza', title: 'Circle of control and influence', subtitle: 'Telling what depends on you apart from what doesn’t', color: '#2F8F5B', icon: '🎯' , itineraries: [7, 8] },
+  { key: 'albero-metodo', title: 'What kind of problem is it?', subtitle: 'A guided path to choosing the right tool', color: '#1F4E8C', icon: '🌳' , itineraries: [6] },
+  { key: 'ipotesi-lab', title: 'Hypothesis lab', subtitle: 'Test an explanation against the evidence', color: '#C0392B', icon: '🔬' , itineraries: [5] },
+  { key: 'gratitudine', title: 'Gratitude practice', subtitle: 'Three things, with specificity — not a generic list', color: '#D4A017', icon: '🌟' , itineraries: [] },
+  { key: 'act-valori', title: 'Values and committed action', subtitle: 'What really matters, and one small step toward it', color: '#2F8F5B', icon: '🧭' , itineraries: [] },
+  { key: 'woop', title: 'Wish, obstacle, plan (WOOP)', subtitle: 'A goal made concrete, not just hoped for', color: '#1F4E8C', icon: '🗺️' , itineraries: [] },
+  { key: 'attivazione', title: 'Behavioural activation', subtitle: 'Small scheduled actions, even without the desire to', color: '#3F7FBF', icon: '📅' , itineraries: [1, 9] },
+  { key: 'abc', title: 'ABC map', subtitle: 'What happens before, during, after', color: '#C0392B', icon: '🔗' , itineraries: [16] },
+  { key: 'scrittura-espressiva', title: 'Expressive writing', subtitle: 'Putting words to a difficult experience', color: '#6B4FA0', icon: '📝' , itineraries: [] },
+  { key: 'self-compassion', title: 'Self-compassion pause', subtitle: 'Three steps, when self-judgment is harsh', color: '#C2185B', icon: '💛' , itineraries: [15] },
+  { key: 'mindful-eating', title: 'Hunger, or something else?', subtitle: 'A guided breathing pause, then three questions before deciding', color: '#D35400', icon: '🍽️' , itineraries: [16] },
+  { key: 'mappa-convinzioni', title: 'Map of beliefs', subtitle: 'What I believed before, what I see now', color: '#1F4E8C', icon: '🗺️' , itineraries: [3] },
   { key: 'time-mapping', title: 'Where my time really goes', subtitle: 'A map, not just an impression', color: '#3F7FBF', icon: '⏱️' , itineraries: [18] },
-  { key: 'mappa-perdita', title: 'Map of loss', subtitle: 'What is gone, what remains, what continues', color: '#6b6b6b', icon: '\u{1F9ED}' , itineraries: [10, 23, 24, 28] },
-  { key: 'safety-plan', title: 'Safety plan', subtitle: 'A basis for reflection, not a substitute for the emergency helpline', color: '#8B1E1E', icon: '\u{1F6E1}️' , itineraries: [32] },
+  { key: 'mappa-perdita', title: 'Map of loss', subtitle: 'What is gone, what remains, what continues', color: '#6b6b6b', icon: '🧭' , itineraries: [10, 23, 24, 28] },
+  { key: 'safety-plan', title: 'Safety plan', subtitle: 'A basis for reflection, not a substitute for the emergency helpline', color: '#8B1E1E', icon: '🛡️' , itineraries: [32] },
   { key: 'tempo-preoccuparsi', title: 'Time to worry', subtitle: 'Postpone, don’t suppress — then face them, all together', color: '#3F7FBF', icon: '⏳' , itineraries: [] },
-  { key: 'problem-solving', title: 'Solving a problem, step by step', subtitle: 'Define, generate alternatives, decide, verify', color: '#2F8F5B', icon: '\u{1F9E9}' , itineraries: [20] },
-  { key: 'controllo-stimolo', title: 'Stimulus control for sleep', subtitle: 'Six rules from CBT-I, the therapy considered the gold standard for insomnia', color: '#6B4FA0', icon: '\u{1F319}' , itineraries: [] },
+  { key: 'problem-solving', title: 'Solving a problem, step by step', subtitle: 'Define, generate alternatives, decide, verify', color: '#2F8F5B', icon: '🧩' , itineraries: [20] },
+  { key: 'controllo-stimolo', title: 'Stimulus control for sleep', subtitle: 'Six rules from CBT-I, the therapy considered the gold standard for insomnia', color: '#6B4FA0', icon: '🌙' , itineraries: [] },
   { key: 'lettera-gratitudine', title: 'Gratitude letter', subtitle: 'To someone you never thanked enough', color: '#D4A017', icon: '✉️' , itineraries: [30] },
-  { key: 'sollievo-caregiver', title: 'Relief for caregivers', subtitle: 'Scheduled breaks can help, even when stopping feels impossible', color: '#3F7FBF', icon: '\u{1F91D}' , itineraries: [24] },
-  { key: 'fare-significato', title: 'Making meaning', subtitle: 'Don’t choose a direction — notice where meaning is already present', color: '#6B4FA0', icon: '\u{1F31F}' , itineraries: [7, 22] },
-  { key: 'momenti-svolta', title: 'Turning-point moments', subtitle: 'For two people together — trust is rebuilt one gesture at a time', color: '#C2185B', icon: '\u{1F91D}' , itineraries: [27] },
-  { key: 'accettazione-radicale', title: 'Radical acceptance', subtitle: 'Pain is inevitable, added suffering isn’t', color: '#6b6b6b', icon: '\u{1FAB6}' , itineraries: [7] },
-  { key: 'autotest', title: 'Self-testing, not re-reading', subtitle: 'Write down what you remember before checking', color: '#3F7FBF', icon: '\u{1F9E0}' , itineraries: [] },
-  { key: 'piano-studio', title: 'Spaced study plan', subtitle: 'Short sessions, not a marathon', color: '#2F8F5B', icon: '\u{1F4C6}' , itineraries: [] },
-  { key: 'respiro', title: 'Guided breathing', subtitle: 'A circle to follow with your breath', color: '#1F4E8C', icon: '\u{1F30A}' , itineraries: [1] },
-  { key: 'jacobson', title: 'Muscle relaxation', subtitle: 'Tension and release, one group at a time', color: '#6B4FA0', icon: '\u{1F4AA}' , itineraries: [1] },
-  { key: 'grounding', title: 'Grounding 5-4-3-2-1', subtitle: 'Returning to the present through the senses', color: '#2F8F5B', icon: '\u{1F441}️' , itineraries: [1] },
-  { key: 'mindfulness', title: 'Mindfulness, 5 minutes', subtitle: 'A timer with your breath as an anchor', color: '#3F7FBF', icon: '\u{1F9D8}' , itineraries: [1] },
-  { key: 'cbt', title: 'Cognitive restructuring', subtitle: 'Testing an automatic thought', color: '#E67E22', icon: '\u{1F4AD}' , itineraries: [1] },
+  { key: 'sollievo-caregiver', title: 'Relief for caregivers', subtitle: 'Scheduled breaks can help, even when stopping feels impossible', color: '#3F7FBF', icon: '🤝' , itineraries: [24] },
+  { key: 'fare-significato', title: 'Making meaning', subtitle: 'Don’t choose a direction — notice where meaning is already present', color: '#6B4FA0', icon: '🌟' , itineraries: [7, 22] },
+  { key: 'momenti-svolta', title: 'Turning-point moments', subtitle: 'For two people together — trust is rebuilt one gesture at a time', color: '#C2185B', icon: '🤝' , itineraries: [27] },
+  { key: 'accettazione-radicale', title: 'Radical acceptance', subtitle: 'Pain is inevitable, added suffering isn’t', color: '#6b6b6b', icon: '🪶' , itineraries: [7] },
+  { key: 'autotest', title: 'Self-testing, not re-reading', subtitle: 'Write down what you remember before checking', color: '#3F7FBF', icon: '🧠' , itineraries: [] },
+  { key: 'piano-studio', title: 'Spaced study plan', subtitle: 'Short sessions, not a marathon', color: '#2F8F5B', icon: '📆' , itineraries: [] },
+  { key: 'respiro', title: 'Guided breathing', subtitle: 'A circle to follow with your breath', color: '#1F4E8C', icon: '🌊' , itineraries: [1] },
+  { key: 'jacobson', title: 'Muscle relaxation', subtitle: 'Tension and release, one group at a time', color: '#6B4FA0', icon: '💪' , itineraries: [1] },
+  { key: 'grounding', title: 'Grounding 5-4-3-2-1', subtitle: 'Returning to the present through the senses', color: '#2F8F5B', icon: '👁️' , itineraries: [1] },
+  { key: 'mindfulness', title: 'Mindfulness, 5 minutes', subtitle: 'A timer with your breath as an anchor', color: '#3F7FBF', icon: '🧘' , itineraries: [1] },
+  { key: 'cbt', title: 'Cognitive restructuring', subtitle: 'Testing an automatic thought', color: '#E67E22', icon: '💭' , itineraries: [1] },
   { key: 'checklist', title: 'Checklist', subtitle: 'Don’t leave it all to memory', color: '#C2185B', icon: '✅' , itineraries: [1] },
   { key: 'cinque-perche', title: 'The 5 Whys', subtitle: 'From the symptom to possible causes, one step at a time', color: '#D4A017', icon: '❓' , itineraries: [4] },
-  { key: 'ooda', title: 'OODA loop', subtitle: 'Observe, Orient, Decide, Act — and start again', color: '#1F4E8C', icon: '\u{1F504}' , itineraries: [2] },
-  { key: 'soap', title: 'SOAP scheme', subtitle: 'Telling what the other person reports apart from what you observe', color: '#2F8F5B', icon: '\u{1F4CB}' , itineraries: [2] },
-  { key: 'ishikawa', title: 'Ishikawa diagram', subtitle: 'Mapping causes by category', color: '#C0392B', icon: '\u{1F41F}' , itineraries: [6] },
-  { key: 'matrice', title: 'Decision matrix', subtitle: 'Comparing options against clear criteria', color: '#6B4FA0', icon: '\u{1F4CA}' , itineraries: [12] },
-  { key: 'cnv', title: 'Nonviolent Communication', subtitle: 'Observation, feeling, need, request', color: '#C2185B', icon: '\u{1F4AC}' , itineraries: [6, 20] },
-  { key: 'colora-respira', title: 'Colour and breathe', subtitle: 'A structured pattern, a slow rhythm', color: '#6B4FA0', icon: '\u{1F3A8}' , itineraries: [] },
+  { key: 'ooda', title: 'OODA loop', subtitle: 'Observe, Orient, Decide, Act — and start again', color: '#1F4E8C', icon: '🔄' , itineraries: [2] },
+  { key: 'soap', title: 'SOAP scheme', subtitle: 'Telling what the other person reports apart from what you observe', color: '#2F8F5B', icon: '📋' , itineraries: [2] },
+  { key: 'ishikawa', title: 'Ishikawa diagram', subtitle: 'Mapping causes by category', color: '#C0392B', icon: '🐟' , itineraries: [6] },
+  { key: 'matrice', title: 'Decision matrix', subtitle: 'Comparing options against clear criteria', color: '#6B4FA0', icon: '📊' , itineraries: [12] },
+  { key: 'cnv', title: 'Nonviolent Communication', subtitle: 'Observation, feeling, need, request', color: '#C2185B', icon: '💬' , itineraries: [6, 20] },
+  { key: 'colora-respira', title: 'Colour and breathe', subtitle: 'A structured pattern, a slow rhythm', color: '#6B4FA0', icon: '🎨' , itineraries: [] },
   { key: 'eccitazione', title: 'From anxiety to excitement', subtitle: 'Before a performance, don’t calm down: reframe', color: '#D4A017', icon: '⚡' , itineraries: [1] },
-  { key: 'verifica-attendibilita', title: 'Check before you believe', subtitle: 'News, a grade, an AI’s answer, exercises — the six Steps applied', color: '#17203A', icon: '\u{1F50D}', itineraries: [] }
+  { key: 'verifica-attendibilita', title: 'Check before you believe', subtitle: 'News, a grade, an AI’s answer, exercises — the six Steps applied', color: '#17203A', icon: '🔍', itineraries: [] }
 ];
 
 // ============ 1. GUIDED BREATHING ============
@@ -1366,11 +1367,11 @@ function JacobsonTool({ baseFont, onExit }) {
 
 // ============ 3. GROUNDING 5-4-3-2-1 ============
 const GROUNDING_STEPS = [
-  { count: 5, sense: 'see', icon: '\u{1F441}️', color: '#2F8F5B' },
+  { count: 5, sense: 'see', icon: '👁️', color: '#2F8F5B' },
   { count: 4, sense: 'touch', icon: '✋', color: '#3F7FBF' },
-  { count: 3, sense: 'hear', icon: '\u{1F442}', color: '#D4A017' },
-  { count: 2, sense: 'smell', icon: '\u{1F443}', color: '#6B4FA0' },
-  { count: 1, sense: 'taste', icon: '\u{1F445}', color: '#C0392B' },
+  { count: 3, sense: 'hear', icon: '👂', color: '#D4A017' },
+  { count: 2, sense: 'smell', icon: '👃', color: '#6B4FA0' },
+  { count: 1, sense: 'taste', icon: '👅', color: '#C0392B' },
 ];
 function GroundingTool({ baseFont, onExit }) {
   const [idx, setIdx] = useState(0);
@@ -1491,7 +1492,6 @@ function CBTTool({ baseFont, onExit }) {
     { label: 'A more accurate thought', value: accurate, set: setAccurate, placeholder: 'With both sets of evidence in front of you, what is a reading more faithful to the facts — not necessarily a more positive one?', color: '#1F4E8C' },
   ];
 
-  return (
   return (
     <div>
       {fields.map((f, i) => (
@@ -2192,7 +2192,6 @@ function BehavioralActivationTool({ baseFont, onExit }) {
       <button onClick={add} style={{ ...btnSecondary, marginBottom: 16 }}>+ Add activity</button>
       <button onClick={onExit} style={btnSecondary}>&#8592; Back to tools</button>
     </div>
-  );
   );
 }
 
@@ -3295,7 +3294,7 @@ function ExcitementReappraisalTool({ baseFont, onExit }) {
 function VerificaAttendibilitaTool({ baseFont, onExit }) {
   const CASES = {
     notizia: {
-      label: 'A news story', icon: '\u{1F4F0}', color: '#0F7A6B', hasText: true,
+      label: 'A news story', icon: '📰', color: '#0F7A6B', hasText: true,
       intro: 'Paste the text of the news story here (or describe it in your own words) before sharing it.',
       placeholder: 'E.g. "Bridge collapses overnight, dozens injured" — the text of the post or article...',
       steps: [
@@ -3308,7 +3307,7 @@ function VerificaAttendibilitaTool({ baseFont, onExit }) {
       ],
     },
     voto: {
-      label: 'A campaign ad or an election promise', icon: '\u{1F5F3}️', color: '#C0392B', hasText: true,
+      label: 'A campaign ad or an election promise', icon: '🗳️', color: '#C0392B', hasText: true,
       intro: 'Paste the slogan or promise here (e.g. from a campaign ad) before assessing it.',
       placeholder: 'E.g. "With our reform, unemployment will drop by 50% within a year."',
       steps: [
@@ -3321,7 +3320,7 @@ function VerificaAttendibilitaTool({ baseFont, onExit }) {
       ],
     },
     ia: {
-      label: 'An AI’s answer', icon: '\u{1F916}', color: '#1F4E8C', hasText: true,
+      label: 'An AI’s answer', icon: '🤖', color: '#1F4E8C', hasText: true,
       intro: 'Paste the chatbot’s answer here that you want to check.',
       placeholder: 'E.g. "According to the data, the reform would lead to 3.2% GDP growth by 2027..."',
       steps: [
@@ -3334,7 +3333,7 @@ function VerificaAttendibilitaTool({ baseFont, onExit }) {
       ],
     },
     esercizio: {
-      label: 'An exercise (maths, physics, computer science)', icon: '\u{1F9EE}', color: '#6B4FA0', hasText: false,
+      label: 'An exercise (maths, physics, computer science)', icon: '🧮', color: '#6B4FA0', hasText: false,
       intro: 'Here the checks are more objective: the subject itself offers verification tools independent of the tone of the answer.',
       steps: [
         { q: 'Am I looking at the facts, or am I already looking at a story?', example: 'A step is a fact only if you redo it yourself and get the same result — until you’ve redone it, it’s only a claim.', placeholder: 'Did you redo the key step yourself?' },
@@ -3536,9 +3535,9 @@ const STEPS = [
 const TOTAL = STEPS.length;
 
 const ATLAS_TABS = [
-  { key: 'accadimento', label: 'Something happened to me...', icon: '\u{1F9ED}', data: ATLAS_EVENT },
+  { key: 'accadimento', label: 'Something happened to me...', icon: '🧭', data: ATLAS_EVENT },
   { key: 'domanda', label: 'I’m wondering...', icon: '❓', data: ATLAS_QUESTION },
-  { key: 'famiglia', label: 'My problem is about...', icon: '\u{1F5FA}️', data: ATLAS_FAMILY },
+  { key: 'famiglia', label: 'My problem is about...', icon: '🗺️', data: ATLAS_FAMILY },
 ];
 
 function CompassProgress({ activeIndex, size = 108 }) {
@@ -3863,7 +3862,7 @@ function MetodoDellaDomandaApp() {
             First we find together the Itinerary closest to what you’re going through — as in the book’s Atlas. Then we walk through it step by step.
           </p>
          <p style={{ fontSize: baseFont * 0.94, lineHeight: 1.6, color: '#5b5b5b', maxWidth: 460, margin: '0 0 8px 0' }}> There is no right answer to guess. Write what is true for you, one step at a time. </p> <p style={{ fontSize: baseFont * 0.82, lineHeight: 1.5, color: '#8a6d2f', maxWidth: 460, margin: '0 0 22px 0', fontStyle: 'italic' }}> The first time you use the app, take a moment to read the list below: it explains what each button does. </p>
-        <div style={{ background: '#F5F1E6', border: '1.5px solid #d8d2bf', borderRadius: 12, padding: '16px 18px', maxWidth: 460, marginBottom: 22, textAlign: 'left' }}> <div style={{ fontWeight: 800, fontSize: baseFont * 0.85, color: '#17203A', marginBottom: 10 }}>What you’ll find in this app</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F9ED} <strong>Find your Itinerary</strong> — 32 narrative paths, drawn from the book, that walk you step by step through a specific situation.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F3AF} <strong>Practical tools</strong> (green button above) — over 40 short, stand-alone exercises, from breathing and mindfulness to critical thinking and planning, usable even without a specific problem in mind.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F305} <strong>I can’t even start the day</strong> — if today is like that, this page doesn’t ask you to choose anything, just to read.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F4DA} <strong>Exams, interviews, work projects</strong> — targeted techniques for before and during an important test.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F33A} <strong>Your Compass Rose</strong> — the map of the path you’ve taken so far.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F52E} <strong>Why questions, not answers</strong> — the philosophy behind the method.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>\u{1F3A7} <strong>Listen to the audiobook</strong> — the narrated book, streamed or downloaded.</div> </div>
+        <div style={{ background: '#F5F1E6', border: '1.5px solid #d8d2bf', borderRadius: 12, padding: '16px 18px', maxWidth: 460, marginBottom: 22, textAlign: 'left' }}> <div style={{ fontWeight: 800, fontSize: baseFont * 0.85, color: '#17203A', marginBottom: 10 }}>What you’ll find in this app</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🧭 <strong>Find your Itinerary</strong> — 32 narrative paths, drawn from the book, that walk you step by step through a specific situation.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🎯 <strong>Practical tools</strong> (green button above) — over 40 short, stand-alone exercises, from breathing and mindfulness to critical thinking and planning, usable even without a specific problem in mind.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🌅 <strong>I can’t even start the day</strong> — if today is like that, this page doesn’t ask you to choose anything, just to read.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>📚 <strong>Exams, interviews, work projects</strong> — targeted techniques for before and during an important test.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🌺 <strong>Your Compass Rose</strong> — the map of the path you’ve taken so far.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🔮 <strong>Why questions, not answers</strong> — the philosophy behind the method.</div> <div style={{ fontSize: baseFont * 0.82, lineHeight: 1.6, color: '#3a3a3a', marginBottom: 8 }}>🎧 <strong>Listen to the audiobook</strong> — the narrated book, streamed or downloaded.</div> </div>
           <div style={{ background: '#EAF1FC', border: '1.5px solid #1F4E8C', borderRadius: 14, padding: '16px 20px', maxWidth: 460, marginBottom: 30, textAlign: 'left' }}>
             <p style={{ fontSize: baseFont * 0.85, lineHeight: 1.55, margin: 0, color: '#17203A' }}>
               This app does not provide diagnosis, therapy, coaching or personal answers. It is an interactive tool for practising the Method of the Question: it helps you observe, distinguish, formulate questions, test hypotheses, recognise the limits of knowledge, and decide which information or next steps might be useful.
@@ -4225,7 +4224,6 @@ function MetodoDellaDomandaApp() {
         </p>
 
         <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-        <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
           {ATLAS_TABS.map((t) => (
             <button key={t.key} onClick={() => setAtlanteTab(t.key)}
               style={tabBtnStyle(t.key === atlanteTab, baseFont)}>
@@ -4525,7 +4523,6 @@ function MetodoDellaDomandaApp() {
             </p>
             <label htmlFor="whenAnswer" style={{ display: 'block', fontSize: baseFont * 0.88, color: '#fff', marginBottom: 8 }}>
               When do you plan to do it? (optional, but it helps)
-            </label>
             </label>
             <input id="whenAnswer" type="text" value={whenAnswer} onChange={(e) => { setWhenAnswer(e.target.value); saveProgress(selectedItinId, answers, e.target.value); }}
               placeholder="E.g. tomorrow morning, by Friday, as soon as I feel ready..."
